@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const productosSchema = new mongoose.Schema({
+const comidasSchema = new mongoose.Schema({
     nombre:{
         type:String,
         required:[true, 'nombre del producto']
@@ -47,5 +47,5 @@ const productosSchema = new mongoose.Schema({
     }
 })
 
-const Productos = mongoose.model('Productos', productosSchema)
-module.exports = Productos
+const Comidas = mongoose.model('Comidas', comidasSchema)
+module.exports = Comidas

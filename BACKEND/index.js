@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const shop = require('./routes/shop')
 require('dotenv').config()
 const connectDB = require('./DB/conexion')
 
@@ -9,9 +10,7 @@ const connectDB = require('./DB/conexion')
 const PUERTO = process.env.PUERTO
 
 /* RUTA */
-app.get('/', (req, res) => {
-    res.send('<h1>Bienvenidos!</h1>');
-})
+app.use('/comidas',shop)
 
 
 /* CONEXION A LA BASE DE DATOS */

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImagenHeroUno, TextosHeroUno } from '../../../indice';
-
+import './Hojas de estilo/Hero.css'
 const Hero = () => {
   return(
     <section className='hero'>

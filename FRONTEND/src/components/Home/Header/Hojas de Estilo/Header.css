@@ -15,7 +15,6 @@ a{
 header{
     width: 100vw;
     padding: 1rem 0rem;
-    background-color: var(--verde--oscuro);
     position: fixed;
 }
 .contenedor-header{

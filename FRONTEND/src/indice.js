@@ -11,6 +11,9 @@ export { Registrarse } from  './components/Home/Header/Registrarse'
 export { Hero } from './components/Home/Hero/Hero'
 export { TextosHeroUno } from './components/Home/Hero/Slide 1/TextosHeroUno'
 export { ImagenHeroUno } from './components/Home/Hero/Slide 1/ImagenesHeroUno'
+export { PreguntaHero } from './components/Home/Hero/Slide 1/PreguntaHero'
+export { OrdenarHero } from './components/Home/Hero/Slide 1/OrdenarHero'
+export { ExplorarHero } from './components/Home/Hero/Slide 1/ExplorarHero'
 
 
 

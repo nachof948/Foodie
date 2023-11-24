@@ -2,7 +2,9 @@ import React from 'react';
 
 const ImagenHeroUno = () => {
   return(
-    <div>ImagenHeroUno</div>
+    <>
+      <img className='hero-comida-principal' src="/Imagenes/Hero/Hero-Principal.png" alt="Ensalada" width={'500px'} />
+    </>
   )
 }
 

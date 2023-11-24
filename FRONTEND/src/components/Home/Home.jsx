@@ -1,10 +1,11 @@
 import React from 'react';
-import { Header } from '../../indice';
+import { Header, Hero } from '../../indice';
 
 const Home = () => {
   return(
     <>
       <Header/>
+      <Hero />
     </>
   )
 }

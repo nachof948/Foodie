@@ -1,3 +1,20 @@
+/* HOME */
+export { Home } from  './components/Home/Home'
+/* HOME-HEADER */
+export { Header } from  './components/Home/Header/Header'
+export { Logo } from  './components/Home/Header/Logo'
+export { NavBar } from  './components/Home/Header/NavBar'
+export { Lupa } from  './components/Home/Header/Lupa'
+export { CarritoDeCompras } from  './components/Home/Header/CarritoDeCompras'
+export { Registrarse } from  './components/Home/Header/Registrarse'
+/* HOME-HERO */
+export { Hero } from './components/Home/Hero/Hero'
+export { TextosHeroUno } from './components/Home/Hero/Slide 1/TextosHeroUno'
+export { ImagenHeroUno } from './components/Home/Hero/Slide 1/ImagenesHeroUno'
+
+
+
+/* SHOP */
 export { TodasLasComidas } from './components/shop/TodasLasComidas'
 export { Carnes } from './components/shop/Carnes'
 export { Ensaladas } from './components/shop/Ensaladas'
@@ -9,4 +26,3 @@ export { Sopas } from './components/shop/Sopas'
 export { Dulces } from './components/shop/Dulces'
 export { Hamburguesas } from  './components/shop/Hamburguesas'
 export { Shop } from  './components/shop/Shop'
-export { Header } from  './components/Home/Header/Header'

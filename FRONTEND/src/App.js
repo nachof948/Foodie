@@ -1,15 +1,12 @@
 import './App.css';
 import {BrowserRouter, Route, Routes} from'react-router-dom'
-import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Header} from './indice';
-import { Opciones } from './components/Home/Opciones/Opciones';
+import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home} from './indice';
 function App() {
   return (
-
-    <div className="App">
-          <Header />
-        <BrowserRouter>
+  <div className="App">
+    <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Opciones />}></Route>
+        <Route path='/' element={<Home />}></Route>
         <Route path='/comidas/all' element={<TodasLasComidas />}></Route>
         <Route path='/comidas/carnes' element={<Carnes />}></Route>
         <Route path='/comidas/ensaladas' element={<Ensaladas />}></Route>
@@ -21,9 +18,8 @@ function App() {
         <Route path='/comidas/dulces' element={<Dulces />}></Route>
         <Route path='/comidas/hamburguesas' element={<Hamburguesas />}></Route>
       </Routes>
-      </BrowserRouter>
-    </div>
-    
+    </BrowserRouter>
+  </div>
   );
 }
 

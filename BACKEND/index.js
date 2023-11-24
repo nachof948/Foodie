@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const home = require('./routes/home')
 const shop = require('./routes/shop')
 require('dotenv').config()
 const connectDB = require('./DB/conexion')
@@ -10,6 +11,7 @@ const connectDB = require('./DB/conexion')
 const PUERTO = process.env.PUERTO
 
 /* RUTA */
+app.use('/',home)
 app.use('/comidas',shop)
 
 

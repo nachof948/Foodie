@@ -13,24 +13,24 @@ const {obtenerTodasLasComidas,
     obtenerTodasLasHamburguesas}= require('../controllers/shop')
 
 /* /comidas/all */
-router.route('/all').get(obtenerTodasLasComidas)
+router.get('/all', obtenerTodasLasComidas)
 /* /comidas/carnes */
-router.route('/carnes').get(obtenerTodasLasCarnes)
+router.get('/carnes', obtenerTodasLasCarnes)
 /* /comidas/ensaladas */
-router.route('/ensaladas').get(obtenerTodasLasEnsaladas)
+router.get('/ensaladas', obtenerTodasLasEnsaladas)
 /* /comidas/sushi */
-router.route('/sushi').get(obtenerTodosLosSushi)
+router.get('/sushi', obtenerTodosLosSushi)
 /* /comidas/pastas */
-router.route('/pastas').get(obtenerTodasLasPastas)
+router.get('/pastas', obtenerTodasLasPastas)
 /* /comidas/pizzas */
-router.route('/pizzas').get(obtenerTodasLasPizzas)
+router.get('/pizzas', obtenerTodasLasPizzas)
 /* /comidas/veganos */
-router.route('/veganos').get(obtenerTodosLosVeganos)
+router.get('/veganos', obtenerTodosLosVeganos)
 /* /comidas/sopas */
-router.route('/sopas').get(obtenerTodasLasSopas)
+router.get('/sopas', obtenerTodasLasSopas)
 /* /comidas/dulces */
-router.route('/dulces').get(obtenerTodosLosDulces)
+router.get('/dulces', obtenerTodosLosDulces)
 /* /comidas/hamburguesas */
-router.route('/hamburguesas').get(obtenerTodasLasHamburguesas)
+router.get('/hamburguesas', obtenerTodasLasHamburguesas)
 
 module.exports = router

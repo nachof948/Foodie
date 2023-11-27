@@ -1,8 +1,12 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
 import './Hojas de estilo/Opciones.css'
+import AOS from 'aos'
 const Opciones = () => {
   const [opciones, setOpciones] = useState([])
+  useEffect(()=>{
+    AOS.init()
+  },[])
   useEffect(() => {
     axios.get('/home')
     .then((response) =>{
@@ -12,7 +16,7 @@ const Opciones = () => {
   },[])
   return(
     <section id='opciones' className='seccion-opciones'>
-      <div className='contenedor-opciones'>
+      <div className='contenedor-opciones' data-aos="zoom-in">
         {opciones.slice(0, 4).map(opcion =>{
           const {nombre, descripcion, precio,imgUrl, _id} = opcion
           return(

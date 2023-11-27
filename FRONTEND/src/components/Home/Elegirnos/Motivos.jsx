@@ -1,7 +1,9 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import AOS from 'aos';
 const Motivos = () => {
-  
+  useEffect(()=>{
+    AOS.init()
+  },[])
   const motivos = [
     {
       img: '/Imagenes/Motivos/Ensalada.png',
@@ -21,7 +23,7 @@ const Motivos = () => {
   ]
 
   return(
-    <div className='motivos'>
+    <div className='motivos'data-aos="zoom-in">
         {motivos.map((motivo, index) =>{
           const {img, titulo, descripcion} = motivo
           return(

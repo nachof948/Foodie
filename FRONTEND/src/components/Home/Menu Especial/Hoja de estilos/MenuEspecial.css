@@ -1,0 +1,123 @@
+/* MENU ESPECIAL */
+.comida-especial{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 4rem 0rem 4rem;
+    position: relative;
+}
+.menta-izquierda{
+    position: absolute;
+    left: 0;
+    top: -5rem;
+}
+.comida-especial-contenedor{
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* TEXTOS-MENU ESPECIAL */
+.textos-especial{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.textos-especial h2{
+    font-size: 3.5rem;
+}
+.textos-especial p{
+    text-align: center;
+    font-size: 1.3rem;
+    color: gray;
+    width: 60%;
+}
+.especiales{
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+}
+.especial{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
+    width: 28rem;
+    height: 30rem;
+    border-radius:10px;
+    margin-top: 7rem;
+    position: relative;
+    padding-left: 1.5rem;
+    background-color: rgb(249,250,252);
+    transition: all 250ms;
+}
+.especial:hover{
+    box-shadow: 0px 0px 10px #84B74E; 
+}
+.comida{
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background-color: #84B74E;
+    padding: 1rem;
+    position: absolute;
+    top: -7rem;
+    left: 10.8rem;
+    z-index: 10;
+    object-fit: cover;
+}
+.especial h2{
+    font-size: 2.9rem;
+    letter-spacing: 1px;
+    font-weight: 900;
+    margin: 0;
+    position: absolute;
+    bottom: 10rem;
+}
+
+.estrellas{
+    position: absolute;
+    top: 21rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+    background-color: transparent;
+}
+.estrellas img{
+    width: 2.1rem;
+    height: 2.1rem;
+}
+
+.num{
+    color: gray;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 0.5rem;
+}
+.precio{
+    position: absolute;
+    top: 24rem;
+    font-weight: bold;
+    color: #84B74E;
+    font-size: 3rem;
+    letter-spacing: 0.5px;
+}
+
+.bolsa{
+    background-color: #84B74E;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: none;
+    padding: 3rem 2.5rem;
+    border-radius:8px;
+    cursor: pointer;
+    transition: all 250ms;
+}
+.bolsa:hover{
+    background-color: #aed882;
+}

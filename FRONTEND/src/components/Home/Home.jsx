@@ -1,5 +1,5 @@
 import React from 'react';
-import { Elegirnos, Header, Hero, Opciones } from '../../indice';
+import { Elegirnos, Header, Hero, MenuEspecial, Opciones } from '../../indice';
 
 const Home = () => {
   return(
@@ -8,6 +8,7 @@ const Home = () => {
       <Hero />
       <Opciones />
       <Elegirnos />
+      <MenuEspecial />
     </>
   )
 }

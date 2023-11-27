@@ -23,6 +23,11 @@ export { Elegirnos } from './components/Home/Elegirnos/Elegirnos'
 export { TextosElegirnos } from './components/Home/Elegirnos/Textos-elegirnos'
 export { Motivos } from './components/Home/Elegirnos/Motivos'
 
+/* HOME-MENU ESPECIAL */
+export { MenuEspecial } from './components/Home/Menu Especial/MenuEspecial'
+export { TextosMenuEspecial } from './components/Home/Menu Especial/Textos-Menu-Especial.jsx'
+export { RecetasEspecial } from './components/Home/Menu Especial/RecetasEspecial.jsx'
+
 
 /* SHOP */
 export { TodasLasComidas } from './components/shop/TodasLasComidas'

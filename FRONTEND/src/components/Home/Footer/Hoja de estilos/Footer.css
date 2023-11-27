@@ -5,7 +5,7 @@ footer{
     display: flex;
     justify-content: center;
     padding: 4rem 0rem;
-    margin: 0 auto;
+    margin: 5.5rem auto 0rem;
 }
 .contenedor-footer{
     width: 85vw;

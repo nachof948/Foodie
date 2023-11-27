@@ -1,0 +1,83 @@
+/* SHOP */
+.shop{
+    display: flex;
+    width: 85vw;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+.shop h1{
+    color: #010101;
+    font-size: 3.5rem;
+    margin: 6rem 0rem 0rem 0rem;
+}
+.titulos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 3.5rem;
+    width: 100%;
+    margin: 0;
+}
+.titulos a{
+    font-size: 1.4rem;
+    color: grey;
+    text-align: center;
+    margin-bottom: -1rem;
+    text-wrap: nowrap;
+}
+.titulos a:hover{
+    color: rgb(132,183,78);
+}
+.comidas-shop {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.tarjeta-shop{
+    margin-top: 7rem;
+    background-color: white;
+    border-radius: 25px;
+    width: 23rem;
+    height: 23rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 0px 10px rgb(209, 205, 205);
+}
+.tarjeta-shop-textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0rem 1rem;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 10rem;
+}
+.tarjeta-shop-textos p{
+    color: gray;
+}
+.opciones-comprar{
+    margin-top: 1rem;
+}
+.opciones-comprar p{
+    color: #010101;
+    border: 2px solid;
+}
+.tarjeta-shop img{
+    width: 14rem;
+    border-radius: 50%;
+    border: 0.9rem solid var(--verde--oscuro);
+    position: absolute;
+    bottom: 15rem;
+    left: 3.8em;
+}
+

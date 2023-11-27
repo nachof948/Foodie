@@ -2,7 +2,7 @@
 export { Home } from  './components/Home/Home'
 
 /* HOME-HEADER */
-export { Header } from  './components/Home/Header/Header'
+export { Header } from  './components/Home/Header/Header.jsx'
 export { Logo } from  './components/Home/Header/Logo'
 export { NavBar } from  './components/Home/Header/NavBar'
 export { Lupa } from  './components/Home/Header/Lupa'
@@ -44,6 +44,8 @@ export { Chefs } from './components/Home/Sobre Nosotros/Chefs.jsx'
 export { Footer } from './components/Home/Footer/Footer.jsx'
 
 /* SHOP */
+/* HEADER-SHOP */
+export { HeaderShop } from './components/Header-Shop/HeaderShop.jsx'
 export { TodasLasComidas } from './components/shop/TodasLasComidas'
 export { Carnes } from './components/shop/Carnes'
 export { Ensaladas } from './components/shop/Ensaladas'

@@ -3,9 +3,7 @@ import {Link} from'react-router-dom'
 
 const Shop = () => {
   return(
-    <>
-      <div>
-        <Link to='/'>Volver a Home</Link>
+      <div className='titulos'>
         <Link to='/comidas/all'>Todas las comidas</Link>
         <Link to='/comidas/carnes'>Carnes</Link>
         <Link to='/comidas/ensaladas'>Ensaladas</Link>
@@ -17,7 +15,6 @@ const Shop = () => {
         <Link to='/comidas/dulces'>Dulces</Link>
         <Link to='/comidas/hamburguesas'>Hamburguesas</Link>
       </div>
-    </>
   )
 }
 

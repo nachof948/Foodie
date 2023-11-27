@@ -28,6 +28,10 @@ export { MenuEspecial } from './components/Home/Menu Especial/MenuEspecial'
 export { TextosMenuEspecial } from './components/Home/Menu Especial/Textos-Menu-Especial.jsx'
 export { RecetasEspecial } from './components/Home/Menu Especial/RecetasEspecial.jsx'
 
+/* HOME-MENU HABITUAL */
+export { MenuHabitual } from './components/Home/Menu Habitual/MenuHabitual.jsx'
+export { TextosMenuHabitual } from './components/Home/Menu Habitual/Textos-Menu-Habitual.jsx'
+export { RecetasHabitual } from './components/Home/Menu Habitual/RecetasHabitual.jsx'
 
 /* SHOP */
 export { TodasLasComidas } from './components/shop/TodasLasComidas'

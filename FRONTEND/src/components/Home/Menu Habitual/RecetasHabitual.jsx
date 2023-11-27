@@ -17,7 +17,7 @@ const RecetasHabitual = () => {
         const {_id, nombre, descripcion,precio, estrellas, imgUrl} = habitual
         return(
           <div className='tarjeta-habitual tarjeta-producto' key={_id} data-aos="fade-up" data-aos-duration="750">
-            <img className='tarjeta-habitual-img' src={imgUrl} alt={nombre} />
+            <img className='tarjeta-habitual-img' src={imgUrl} alt={nombre} loading="lazy" />
             <div className="tarjeta-textos-habitual">
               <h2>{nombre}</h2>
               <div className="estrellasHabitual">

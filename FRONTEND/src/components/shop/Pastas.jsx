@@ -28,7 +28,7 @@ const Pastas = () => {
               const { _id, nombre, descripcion, precio,imgUrl } = comida;
               return (
                 <div className='tarjeta-shop tarjeta-producto' key={_id} data-aos="fade-up" data-aos-duration="750">
-                  <img src={imgUrl} alt="" width={"200px"} />
+                  <img src={imgUrl} alt="" width={"200px"} loading="lazy" />
                   <div className="tarjeta-shop-textos">
                     <h2>{nombre}</h2>
                     <p>{descripcion}</p>

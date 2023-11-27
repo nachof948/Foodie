@@ -19,7 +19,7 @@ const Opciones = () => {
           const {nombre, descripcion, precio,imgUrl, _id} = opcion
           return(
             <div className='tarjeta tarjeta-producto' key={_id}> 
-              <img src={imgUrl} alt={nombre} />
+              <img src={imgUrl} alt={nombre} loading="lazy" />
               <div className="tarjeta-textos">
                 <h2>{nombre}</h2>
                 <p>{descripcion}</p>

@@ -1,0 +1,79 @@
+/* FOOTER */
+footer{
+    width: 100vw;
+    background-color: rgb(229,241,217);
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0rem;
+    margin: 0 auto;
+}
+.contenedor-footer{
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+}
+footer h2{
+    font-size: 2.5rem;
+    margin: 0;
+}
+footer a{
+    font-size: 1.5rem;
+    padding-left: 0rem;
+    color: grey;
+    transition: all 250ms;
+}
+footer a:hover{
+    color: black;
+}
+.menu,
+.ayuda,
+.contacto{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1.5rem;
+}
+.suscribite{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+.suscribite h2{
+    line-height: 2rem;
+}
+.suscribite input{
+    background-color: transparent;
+    border: 2px solid rgb(132,183,78);
+    border-radius: 10px;
+    padding: 1.1rem 0.8rem 1rem;
+    width: 32rem;
+    font-size: 1.6rem;
+    color: grey;
+    outline: none;
+}
+.suscribite input::placeholder{
+    font-size: 1.6rem;
+    color: grey;
+}
+.suscribite button{
+    background-color: rgb(132,183,78);
+    border: 2px solid rgb(132,183,78);
+    font-size: 1.3rem;
+    color: white;
+    padding: 1.21rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 250ms;
+}
+.suscribite button:hover{
+    background-color: transparent;
+    border: 2px solid rgb(132,183,78);
+    color: rgb(132,183,78);
+}
+.suscribite span{
+    position: absolute;
+    transform: translateX(-100%);
+    background-color: transparent;
+}

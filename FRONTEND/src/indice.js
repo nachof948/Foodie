@@ -1,5 +1,6 @@
 /* HOME */
 export { Home } from  './components/Home/Home'
+
 /* HOME-HEADER */
 export { Header } from  './components/Home/Header/Header'
 export { Logo } from  './components/Home/Header/Logo'
@@ -7,6 +8,7 @@ export { NavBar } from  './components/Home/Header/NavBar'
 export { Lupa } from  './components/Home/Header/Lupa'
 export { CarritoDeCompras } from  './components/Home/Header/CarritoDeCompras'
 export { Registrarse } from  './components/Home/Header/Registrarse'
+
 /* HOME-HERO */
 export { Hero } from './components/Home/Hero/Hero'
 export { TextosHeroUno } from './components/Home/Hero/Slide 1/TextosHeroUno'
@@ -32,6 +34,14 @@ export { RecetasEspecial } from './components/Home/Menu Especial/RecetasEspecial
 export { MenuHabitual } from './components/Home/Menu Habitual/MenuHabitual.jsx'
 export { TextosMenuHabitual } from './components/Home/Menu Habitual/Textos-Menu-Habitual.jsx'
 export { RecetasHabitual } from './components/Home/Menu Habitual/RecetasHabitual.jsx'
+
+/* HOME-SOBRE NOSOTROS */
+export { SobreNosotros } from './components/Home/Sobre Nosotros/SobreNosotros.jsx'
+export { TextosSobreNosotros } from './components/Home/Sobre Nosotros/Textos-Sobre-Nosotros.jsx'
+export { Chefs } from './components/Home/Sobre Nosotros/Chefs.jsx'
+
+/* FOOTER */
+export { Footer } from './components/Footer/Footer.jsx'
 
 /* SHOP */
 export { TodasLasComidas } from './components/shop/TodasLasComidas'

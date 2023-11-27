@@ -5,7 +5,7 @@ const NavBar = () => {
     <nav>
       <a href="/">Inicio</a>
       <a href="/comidas/all">Menu</a>
-      <a href="#sobrenosotros">Sobre Nosotros</a>
+      <a href="#sobreNosotros">Sobre Nosotros</a>
       <a href="#contacto">Contacto</a>
     </nav>
   )

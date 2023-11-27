@@ -2,7 +2,9 @@ import React from 'react';
 
 const OrdenarHero = () => {
   return(
-    <div>OrdenarHero</div>
+    <>
+      <a href="/" className='btn-hero-izq'>Ordenar Ahora</a>
+    </>
   )
 }
 

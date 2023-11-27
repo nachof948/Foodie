@@ -3,7 +3,7 @@ import React from 'react';
 const PreguntaHero = () => {
   return(
     <div>
-      <a href="/">Hambriento?</a>
+      <a href="/" className='btn-hero-pregunta'>Hambriento?</a>
     </div>
   )
 }

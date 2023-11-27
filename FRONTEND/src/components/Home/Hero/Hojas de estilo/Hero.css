@@ -22,6 +22,82 @@
     align-items: flex-start;
     gap: 2rem;
 }
+.textos-hero h1{
+    font-size: 5rem;
+    font-weight: 900;
+    width: 90%;
+    letter-spacing: 3px;
+    line-height: 6rem;
+    z-index: 10;
+}
+.textos-hero p{
+    color: var(--gris);
+    font-weight: 400;
+    font-size: 1.2rem;
+    width: 55%;
+}
+/* HERO-PREGUNTA */
+.btn-hero-pregunta{
+    background-color: transparent;
+    border: 1px solid var(--negro);
+    border-radius: 25px;
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+.btn-hero-pregunta:hover{
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+/* BOTONES-HERO */
+.btns-hero{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.btn-hero-izq{
+    background-color: var(--verde--oscuro);
+    border: 1px solid var(--verde--oscuro);
+    padding: 1.4rem 2.8rem;
+    color: white;
+    font-size: 1.2rem;
+    text-wrap: nowrap;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+.btn-hero-izq:hover{
+    background-color: var(--blanco);
+    color: var(--verde--oscuro);
+
+}
+.btn-hero-der{
+    background-color: transparent;
+    border: 1px solid var(--negro);
+    padding: 1.4rem 3rem;
+    color: var(--negro);
+    font-size: 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+.btn-hero-der span{
+    position: relative;
+    top: 0.1rem;
+}
+.btn-hero-der:hover{
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
 /* IMAGENES-HERO */
 .hero-comida-principal{
     width: 30rem;

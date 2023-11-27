@@ -2,7 +2,9 @@ import React from 'react';
 
 const ExplorarHero = () => {
   return(
-    <div>ExplorarHero</div>
+    <>
+      <a href="/" className='btn-hero-der'>Explorar Mas</a>
+    </>
   )
 }
 

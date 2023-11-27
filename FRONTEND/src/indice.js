@@ -15,7 +15,8 @@ export { PreguntaHero } from './components/Home/Hero/Slide 1/PreguntaHero'
 export { OrdenarHero } from './components/Home/Hero/Slide 1/OrdenarHero'
 export { ExplorarHero } from './components/Home/Hero/Slide 1/ExplorarHero'
 
-
+/* HOME-OPCIONES */
+export { Opciones } from './components/Home/Opciones/Opciones'
 
 /* SHOP */
 export { TodasLasComidas } from './components/shop/TodasLasComidas'

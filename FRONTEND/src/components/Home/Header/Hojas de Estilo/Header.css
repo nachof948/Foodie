@@ -16,6 +16,7 @@ header{
     width: 100vw;
     padding: 1rem 0rem;
     position: fixed;
+    z-index: 20;
 }
 .contenedor-header{
     width: 85vw;
@@ -23,6 +24,9 @@ header{
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+}
+.header-verde{
+    background-color: var(--verde--oscuro);
 }
 /* LOGO */
 .empresa{

@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="menu">
             <h2>Menu</h2>
             <a href="#hero">Inicio</a>
-            <a href="#eleginos">Por que elegir</a>
+            <a href="#elegirnos">Por que elegir</a>
             <a href="#menuEspecial">Menu Especial</a>
-            <a href="#comidaHabitual">Menu Regular</a>
+            <a href="#menuHabitual">Menu Regular</a>
             <a href="#sobreNosotros">Chef's especial</a>
         </div>
 

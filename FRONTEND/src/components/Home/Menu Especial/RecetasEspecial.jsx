@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const RecetasEspecial = () => {
 	const [menuEspecial, setMenuEspecial] = useState([])
+  useEffect(()=>{AOS.init()},[])
 	useEffect(()=>{
 		axios.get('/home')
 		.then((response=>{
@@ -14,7 +17,7 @@ const RecetasEspecial = () => {
 			{menuEspecial.slice(4,7).map(receta =>{
 				const {imgUrl, nombre, precio, estrellas, _id} = receta
         return(
-          <div className='especial tarjeta-producto' key={_id}>
+          <div className='especial tarjeta-producto' key={_id}  data-aos="zoom-in" data-aos-duration="750">
             <img className='comida' src={imgUrl} alt={nombre} />
             <h2>{nombre}</h2>
               <div class="estrellas">

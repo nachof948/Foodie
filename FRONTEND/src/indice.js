@@ -41,7 +41,7 @@ export { TextosSobreNosotros } from './components/Home/Sobre Nosotros/Textos-Sob
 export { Chefs } from './components/Home/Sobre Nosotros/Chefs.jsx'
 
 /* FOOTER */
-export { Footer } from './components/Footer/Footer.jsx'
+export { Footer } from './components/Home/Footer/Footer.jsx'
 
 /* SHOP */
 export { TodasLasComidas } from './components/shop/TodasLasComidas'

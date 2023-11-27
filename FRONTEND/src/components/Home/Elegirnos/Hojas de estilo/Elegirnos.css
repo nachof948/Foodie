@@ -1,0 +1,82 @@
+/* ELEGIRNOS */
+.elegirnos{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 4rem 0rem;
+    position: relative;
+}
+.contenedor-elegirnos{
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-elegirnos h2{
+    font-size: 3.5rem;
+    text-align: center;
+}
+/* HOJA DE MENTA */
+.menta-derecha{
+    position: absolute;
+    right: 0.75rem;
+    top: -3rem;
+}
+/* TEXTOS-ELEGIRNOS */
+.textos-elegirnos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.textos-elegirnos p{
+    text-align: center;
+    font-size: 1.3rem;
+    color: gray;
+    width: 70%;
+}
+/* MOTIVOS-ELEGIRNOS */
+.motivos{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+.motivo{
+    width: 32rem;
+    height: 21rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 11px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    font-family: 'Lato', sans-serif;
+    transition: all 300ms;
+}
+.motivo:hover{
+    transform: scale(1.12);
+    transition: 400ms;
+}
+.motivo img{
+    width: 5rem;
+    height: 5rem;
+    padding-bottom: 2rem;
+}
+.motivo h2{
+    font-size: 2.3rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.motivo p{
+    text-align: center;
+    color: gray;
+    font-size: 1.2rem;
+    padding-top: 1.2em;
+    width: 90%;
+}

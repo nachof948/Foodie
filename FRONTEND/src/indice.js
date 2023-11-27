@@ -18,6 +18,12 @@ export { ExplorarHero } from './components/Home/Hero/Slide 1/ExplorarHero'
 /* HOME-OPCIONES */
 export { Opciones } from './components/Home/Opciones/Opciones'
 
+/* HOME-ELEGIRNOS */
+export { Elegirnos } from './components/Home/Elegirnos/Elegirnos'
+export { TextosElegirnos } from './components/Home/Elegirnos/Textos-elegirnos'
+export { Motivos } from './components/Home/Elegirnos/Motivos'
+
+
 /* SHOP */
 export { TodasLasComidas } from './components/shop/TodasLasComidas'
 export { Carnes } from './components/shop/Carnes'

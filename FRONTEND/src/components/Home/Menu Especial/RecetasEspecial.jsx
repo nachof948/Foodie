@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AOS from 'aos'
+import { useNavigate } from 'react-router-dom';
+import { mirarProducto } from '../../../Funciones/mirarProducto';
 import 'aos/dist/aos.css'
 
 const RecetasEspecial = () => {
+  const navegar = useNavigate()
+
 	const [menuEspecial, setMenuEspecial] = useState([])
+
   useEffect(()=>{AOS.init()},[])
 	useEffect(()=>{
 		axios.get('/home')
@@ -17,7 +22,7 @@ const RecetasEspecial = () => {
 			{menuEspecial.slice(4,7).map(receta =>{
 				const {imgUrl, nombre, precio, estrellas, _id} = receta
         return(
-          <div className='especial tarjeta-producto' key={_id}  data-aos="zoom-in" data-aos-duration="750">
+          <div className='especial tarjeta-producto' key={_id} onClick={()=>{mirarProducto(_id, navegar)}}  data-aos="zoom-in" data-aos-duration="750">
             <img className='comida' src={imgUrl} alt={nombre} loading="lazy"/>
             <h2>{nombre}</h2>
               <div className="estrellas">

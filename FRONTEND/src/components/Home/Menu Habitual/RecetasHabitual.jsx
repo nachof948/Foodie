@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AOS from 'aos'
+import { useNavigate } from 'react-router-dom';
+import { mirarProducto } from '../../../Funciones/mirarProducto';
 import 'aos/dist/aos.css'
 const RecetasHabitual = () => {
+  const navegar = useNavigate()
   const [menuHabitual,setMenuHabitual] = useState([])
   useEffect(()=>{AOS.init()},[])
   useEffect(()=>{
@@ -16,7 +19,11 @@ const RecetasHabitual = () => {
       {menuHabitual.slice(7, 13).map(habitual =>{
         const {_id, nombre, descripcion,precio, estrellas, imgUrl} = habitual
         return(
-          <div className='tarjeta-habitual tarjeta-producto' key={_id} data-aos="fade-up" data-aos-duration="750">
+          <div className='tarjeta-habitual tarjeta-producto' 
+          onClick={()=>{mirarProducto(_id, navegar)}} 
+          key={_id}
+          data-aos="fade-up" 
+          data-aos-duration="750">
             <img className='tarjeta-habitual-img' src={imgUrl} alt={nombre} loading="lazy" />
             <div className="tarjeta-textos-habitual">
               <h2>{nombre}</h2>

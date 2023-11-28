@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react';
-import { Footer, HeaderShop } from '../../indice';
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
+import { HeaderShop, Footer } from '../../indice'
 import './Hoja de estilos/Producto.css'
 const Producto = () => {
   const params = useParams()
@@ -24,15 +24,18 @@ const Producto = () => {
       setPrecio(datos.precio)
     })
     .catch((error)=>{console.log(error)})
-  },[params._id])
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [params._id]);
   return(
     <>
-    <HeaderShop />
+    <HeaderShop /> 
       <main>
-        <section>
-          <img src={img} alt={nombre} />
+      <section className='section-producto'>
+          <div className="imagen-producto">
+            <img src={img} alt={nombre} />
+          </div>
           <div className="producto-textos">
-            <h1>{nombre}</h1>
+            <h1 className='titulo-producto'>{nombre}</h1>
             <div className="ventas-rating">
               <div className="rating">
                 <div className="estrellas-producto">
@@ -44,15 +47,15 @@ const Producto = () => {
                 </div>
                 <p>{rating}</p>
               </div>
-              <p>Vendidos <span>{vendidos}</span></p>
+              <p><span>Vendidos</span>{vendidos}</p>
             </div>
-            <p>{descripcionExtensa}</p>
-            <p>${precio}</p>
-            <button className='comprar-ahora'>Comprar Ahora</button>
+            <p className='precio-producto'>${precio}</p>
+            <p className='descripcion-extensa-producto'>{descripcionExtensa}</p>
+            <button className='comprar-ahora comprar-producto'>Comprar Ahora</button>
           </div>
         </section>
-      </main>
-    <Footer />
+      </main> 
+      <Footer />
     </>
   )
 }

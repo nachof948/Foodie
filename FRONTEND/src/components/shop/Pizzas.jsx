@@ -1,10 +1,14 @@
 import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import { HeaderShop,Shop, Footer } from '../../indice';
+import { useNavigate } from 'react-router-dom';
+import { mirarProducto } from '../../Funciones/mirarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 const Pizzas = () => {
+  const navegar = useNavigate()
   useEffect(()=>{AOS.init()},[])
+
   const [Pizzas, setPizzas] = useState([])
   useEffect(()=>{
     axios.get('/comidas/Pizzas')
@@ -27,7 +31,7 @@ const Pizzas = () => {
               {Pizzas.map(comida => {
               const { _id, nombre, descripcion, precio,imgUrl } = comida;
               return (
-                <div className='tarjeta-shop tarjeta-producto' key={_id} data-aos="fade-up" data-aos-duration="750">
+                <div className='tarjeta-shop tarjeta-producto' key={_id}  onClick={()=>{mirarProducto(_id, navegar)}} data-aos="fade-up" data-aos-duration="750">
                   <img src={imgUrl} alt="" width={"200px"} loading="lazy"/>
                   <div className="tarjeta-shop-textos">
                     <h2>{nombre}</h2>

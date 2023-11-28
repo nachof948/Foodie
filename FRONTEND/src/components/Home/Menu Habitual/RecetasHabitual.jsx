@@ -21,12 +21,12 @@ const RecetasHabitual = () => {
             <div className="tarjeta-textos-habitual">
               <h2>{nombre}</h2>
               <div className="estrellasHabitual">
-              <img class="estrella" src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
-                <img class="estrella"  src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
-                <img class="estrella"  src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
-                <img class="estrella" src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
-                <img class="estrella"  src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
-                <p class="numero">({estrellas})</p>
+              <img className="estrella" src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
+                <img className="estrella"  src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
+                <img className="estrella"  src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
+                <img className="estrella" src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
+                <img className="estrella"  src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
+                <p className="numero">({estrellas})</p>
               </div>
               <p>{descripcion}</p>
               <div className="opciones-comprar-habitual">

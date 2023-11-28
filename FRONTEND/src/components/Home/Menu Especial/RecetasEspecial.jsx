@@ -20,15 +20,15 @@ const RecetasEspecial = () => {
           <div className='especial tarjeta-producto' key={_id}  data-aos="zoom-in" data-aos-duration="750">
             <img className='comida' src={imgUrl} alt={nombre} loading="lazy"/>
             <h2>{nombre}</h2>
-              <div class="estrellas">
+              <div className="estrellas">
                   <img src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
                   <img src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
                   <img src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
                   <img src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
                   <img src="Imagenes/icons8-estrella.png" alt="Estrellas"/>
-                  <p class="num">({estrellas})</p>
+                  <p className="num">({estrellas})</p>
               </div>
-              <div class="precio">
+              <div className="precio">
                 <p>${precio}</p>
               </div>
               <button className='comprar-ahora bolsa'><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></button>

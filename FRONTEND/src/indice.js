@@ -43,6 +43,11 @@ export { Chefs } from './components/Home/Sobre Nosotros/Chefs.jsx'
 /* FOOTER */
 export { Footer } from './components/Home/Footer/Footer.jsx'
 
+/* PRODUCTO */
+export { Producto } from './components/Producto/Producto.jsx'
+
+
+
 /* SHOP */
 /* HEADER-SHOP */
 export { HeaderShop } from './components/Header-Shop/HeaderShop.jsx'

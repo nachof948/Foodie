@@ -1,6 +1,6 @@
 import './App.css';
 import {BrowserRouter, Route, Routes} from'react-router-dom'
-import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home} from './indice';
+import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto} from './indice';
 function App() {
   return (
   <div className="App">
@@ -17,6 +17,7 @@ function App() {
         <Route path='/comidas/sopas' element={<Sopas />}></Route>
         <Route path='/comidas/dulces' element={<Dulces />}></Route>
         <Route path='/comidas/hamburguesas' element={<Hamburguesas />}></Route>
+        <Route path='/producto/:_id' element={<Producto />}></Route>
       </Routes>
     </BrowserRouter>
   </div>

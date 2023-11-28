@@ -37,7 +37,6 @@ const Veganos = () => {
                     <p>${precio}</p>
                     <button className='comprar-ahora'>Comprar Ahora</button>
                   </div>
-                  
                 </div>
               );
               })}

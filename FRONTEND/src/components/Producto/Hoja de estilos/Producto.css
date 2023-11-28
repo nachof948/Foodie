@@ -1,0 +1,33 @@
+/* PRODUCTO */
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 9rem;
+}
+section{
+    display: flex;
+    align-items: center;
+}
+section img{
+    border-radius: 50%;
+    width: 35rem;
+}
+.producto-textos{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.ventas-rating{
+    display: flex;
+    align-items: center;
+}
+.rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.estrella-producto{
+    width: 1.5rem;
+    height: 1.5rem;
+}

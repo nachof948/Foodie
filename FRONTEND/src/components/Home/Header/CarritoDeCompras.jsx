@@ -3,7 +3,7 @@ import React from 'react';
 const CarritoDeCompras = () => {
   return(
     <div>
-      <a href="/"><i class="bi bi-cart"></i></a>
+      <a href="/"><i className="bi bi-cart"></i></a>
     </div>
   )
 }

@@ -1,0 +1,35 @@
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const ClienteGoogle = require('../models/Usuario-Google')
+const passport = require('passport')
+require('dotenv').config()
+
+passport.use(new GoogleStrategy({
+    clientID:process.env.GOOGLE_CLIENT_ID,
+    clientSecret:process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL:'http://localhost:4500/auth/google/redirect'
+    },
+    async (accessToken, refreshToken, profile, done) =>{
+        try{
+            const usuarioRegistrado = await ClienteGoogle.findOne({googleId: profile.id})
+            if(usuarioRegistrado){
+                done(null, usuarioRegistrado)
+            } else{
+                const usuario = await new ClienteGoogle({
+                    googleId: profile.id,
+                    username: profile.displayName,
+                    image:profile.photos[0].value
+                }).save()
+                done(null, usuario)
+            }
+        } catch(error){
+            done(null, error)
+        }
+    }
+))  
+
+passport.serializeUser((usuario, done)=>{
+    done(null, usuario)
+})
+passport.deserializeUser((usuario, done)=>{
+    done(null, usuario)
+})

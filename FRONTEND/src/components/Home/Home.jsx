@@ -1,10 +1,10 @@
 import React from 'react';
 import { Elegirnos, Footer, Header, Hero, MenuEspecial, MenuHabitual, Opciones, SobreNosotros } from '../../indice';
 
-const Home = () => {
+const Home = ({userGoogle}) => {
   return(
     <>
-      <Header/>
+      <Header userGoogle={userGoogle}/>
       <Hero />
       <Opciones />
       <Elegirnos />

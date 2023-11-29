@@ -77,6 +77,9 @@ nav a:hover{
 
 /* REGISTRARSE */
 .registrarse {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 1.3rem;
@@ -88,6 +91,15 @@ nav a:hover{
     cursor: pointer;
     transition: all 200ms ease;
 }
-.registrarse:hover{
+.avatar{
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+.registrarse a{
+    transition: all 200ms ease;
+}
+.registrarse:hover a{
     color: var(--verde-claro);
 }
+

@@ -6,12 +6,13 @@ require('dotenv').config()
 passport.use(new GoogleStrategy({
     clientID:process.env.GOOGLE_CLIENT_ID,
     clientSecret:process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL:'http://localhost:4500/auth/google/redirect'
+    callbackURL:"/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) =>{
         try{
             const usuarioRegistrado = await ClienteGoogle.findOne({googleId: profile.id})
             if(usuarioRegistrado){
+                console.log(usuarioRegistrado)
                 done(null, usuarioRegistrado)
             } else{
                 const usuario = await new ClienteGoogle({
@@ -19,6 +20,7 @@ passport.use(new GoogleStrategy({
                     username: profile.displayName,
                     image:profile.photos[0].value
                 }).save()
+                console.log(usuario)
                 done(null, usuario)
             }
         } catch(error){

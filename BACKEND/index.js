@@ -12,14 +12,17 @@ const cors = require('cors')
 const GooglePassport = require('./config/config')
 /* UTILIZAR COOKIES */
 app.use(cookieSession({
-    nombre:'sesion',
-    keys:process.env.KEY_COOKIE,
+    keys:[process.env.KEY_COOKIE],
     maxAge:24 * 60 * 60 * 100 /* Un dia */
 }))
 
 /* INICIALIZACION DE PASSPORT */
 app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.session({
+    secret:'secreto',
+    resave:false,
+    saveUninitialized:true
+}))
 
 app.use(
     cors({

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { mirarProducto } from '../../Funciones/mirarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-const Sopas = () => {
+const Sopas = ({userGoogle}) => {
   const navegar = useNavigate()
   useEffect(()=>{AOS.init()},[])
 
@@ -19,7 +19,7 @@ const Sopas = () => {
   },[])
   return(
     <>
-    <HeaderShop />
+    <HeaderShop userGoogle={userGoogle} />
     <main> 
       <section className='comida-habitual'>
         <div className="shop">

@@ -7,7 +7,7 @@ import { mirarProducto } from '../../Funciones/mirarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-const TodasLasComidas = () => {
+const TodasLasComidas = ({userGoogle}) => {
   const navegar = useNavigate()
   
   useEffect(()=>{AOS.init()},[])
@@ -22,7 +22,7 @@ const TodasLasComidas = () => {
   },[])
   return(
     <>
-      <HeaderShop />
+      <HeaderShop userGoogle={userGoogle}/>
       <main> 
         <section className='comida-habitual'>
           <div className="shop">

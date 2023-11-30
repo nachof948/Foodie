@@ -79,6 +79,7 @@ nav a:hover{
 .registrarse {
     display: flex;
     align-items: center;
+    position: relative;
     gap: 0.5rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -96,10 +97,26 @@ nav a:hover{
     width: 2rem;
     height: 2rem;
 }
-.registrarse a{
+.registrarse a,
+.registrarse p,
+.cerrar-sesion:hover button{
     transition: all 200ms ease;
 }
-.registrarse:hover a{
+.registrarse:hover a,
+.registrarse:hover p,
+.cerrar-sesion:hover button{
     color: var(--verde-claro);
 }
-
+.cerrar-sesion button{
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    background-color: var(--verde-muy-claro);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 700;
+    cursor: pointer;
+}

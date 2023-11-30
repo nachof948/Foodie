@@ -1,6 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 const Registrarse = ({ userGoogle }) => {
+  const [logout, setLogout] = useState(false)
+  
+  const manejarLogout =()=>{
+    setLogout(!logout)
+  }
+
+  const cerrarSesion = ()=>{
+    window.open('http://localhost:4500/auth/logout','_self')
+  }
+
   return (
     <>
       {!userGoogle && (
@@ -9,10 +19,18 @@ const Registrarse = ({ userGoogle }) => {
         </div>
       )}
       {userGoogle && (
-        <div className='registrarse'>
-          <img className='avatar' src="/Imagenes/chef1.png" alt="" />
-          <Link to={"/auth/registrarse"}>Nacho Fernandez</Link>
+        <div>
+          <div className="registrarse" onClick={manejarLogout}>
+            <img className='avatar' src={userGoogle.image} alt="" />
+            <p>{userGoogle.username}</p>
+          </div>
+          {logout && 
+            <div className="cerrar-sesion">
+              <button onClick={cerrarSesion}>Cerrar Sesion</button>
+            </div>
+          }
         </div>
+        
       )}
     </>
   );

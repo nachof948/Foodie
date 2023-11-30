@@ -20,7 +20,7 @@ const Sushi = () => {
   },[])
   return(
     <>
-    <HeaderShop />
+    <HeaderShop userGoogle={userGoogle} />
     <main> 
       <section className='comida-habitual'>
         <div className="shop">

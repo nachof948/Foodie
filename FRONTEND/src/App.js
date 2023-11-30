@@ -21,7 +21,6 @@ function App() {
         <Route path='/producto/:_id' element={<Producto />}></Route>
         <Route path='/auth/registrarse' element={<Registrarme />}></Route>
       </Routes>
-
   </div>
   );
 }

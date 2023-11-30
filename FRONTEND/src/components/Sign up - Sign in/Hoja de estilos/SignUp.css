@@ -30,6 +30,9 @@
     gap: 10.4rem;
     flex-basis: 65%;
 }
+.registro-google a:hover{
+    text-decoration: underline;
+}
 .registro-google h1{
     font-size: 4rem;
 }

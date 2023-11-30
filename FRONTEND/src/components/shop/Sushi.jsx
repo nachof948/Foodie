@@ -6,7 +6,7 @@ import { mirarProducto } from '../../Funciones/mirarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-const Sushi = () => {
+const Sushi = ({userGoogle}) => {
   const navegar = useNavigate()
   useEffect(()=>{AOS.init()},[])
 

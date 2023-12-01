@@ -4,6 +4,8 @@ const home = require('./routes/home')
 const shop = require('./routes/shop')
 const producto = require ('./routes/producto')
 const registrarse = require('./routes/registrarse')
+const carrito = require('./routes/carrito-compras')
+const compra = require('./routes/comprar')
 require('dotenv').config()
 const connectDB = require('./DB/conexion')
 const cookieSession = require('cookie-session')
@@ -40,6 +42,8 @@ app.use('/',home)
 app.use('/comidas',shop)
 app.use('/', producto)
 app.use('/auth', registrarse)
+app.use('/compras', carrito)
+app.use('/', compra)
 
 
 /* CONEXION A LA BASE DE DATOS */

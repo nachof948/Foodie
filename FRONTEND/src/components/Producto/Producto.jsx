@@ -3,7 +3,8 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom';
 import { HeaderShop, Footer } from '../../indice'
 import './Hoja de estilos/Producto.css'
-const Producto = () => {
+
+const Producto = ({userGoogle}) => {
   const params = useParams()
   const [nombre, setNombre] = useState('')
   const [img, setImg] = useState('')
@@ -28,7 +29,7 @@ const Producto = () => {
   }, [params._id]);
   return(
     <>
-    <HeaderShop /> 
+    <HeaderShop userGoogle={userGoogle} /> 
       <main>
       <section className='section-producto'>
           <div className="imagen-producto">

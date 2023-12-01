@@ -65,3 +65,6 @@ export { Sopas } from './components/shop/Sopas'
 export { Dulces } from './components/shop/Dulces'
 export { Hamburguesas } from  './components/shop/Hamburguesas'
 export { Shop } from  './components/shop/Shop'
+
+/* CARRITO DE COMPRAS */
+export { Carrito } from './components/Carrito/Carrito.jsx'

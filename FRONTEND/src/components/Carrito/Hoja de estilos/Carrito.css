@@ -1,0 +1,117 @@
+.section-carrito{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 9rem 0rem 6rem ;
+    margin: 0 auto;
+}
+.carrito-productos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+    padding-top: 5rem;
+}
+.carrito-productos img{
+    width: 11.5rem;
+    height: 11rem;
+    border-radius: 50%;
+}
+.comprar-carrito button{
+    background-color: #83B64D;
+    color: #EEEEEE;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    border: 1px solid #83B64D;
+    transition: all 250ms;
+}
+.comprar-carrito button:hover{
+    color: #83B64D;
+    background-color: transparent;
+}
+.carrito-productos p{
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 0.5rem;
+    font-size: 2rem;
+    text-wrap: nowrap;
+}
+.realizar-compra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+.realizar-compra p{
+    font-weight: 600;
+    font-size: 2rem;
+}
+.comprar-carrito{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.agregar{
+    background-color: #83B64D;
+    color: #EEEEEE;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 250ms;
+    border: 2px solid #83B64D;
+    transition: all 250ms;
+}
+.agregar:hover{
+    background-color: transparent;
+    color: #83B64D;
+}
+.buscar-productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+.buscar-productos a{
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    border: 1px solid #83B64D;
+    transition: all 250ms;
+}
+.carrito-productos a{
+    background-color: #83B64D;
+    color: #EEEEEE;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 250ms;
+}
+.carrito-productos a:hover{
+    color: black;
+}
+.buscar-productos a:hover{
+    background-color: transparent;
+    color: #83B64D;
+}
+.realizar-compra .explorar{
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    background-color: #010101;
+    font-size: 2rem;
+    border: 1px solid #010101;
+    transition: all 250ms;
+}
+.realizar-compra .explorar:hover{
+    background-color: transparent;
+    color: #010101;
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Routes} from 'react-router-dom'
-import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Registrarme} from './indice';
+import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Registrarme, Carrito} from './indice';
 import axios from 'axios';
 function App() {
   const [userGoogle, setUserGoogle] = useState(null)
@@ -27,7 +27,6 @@ function App() {
   
     obtenerUsuario();
   }, []);
-  console.log(userGoogle)
   return (
   <div className="App">
       <Routes>
@@ -44,6 +43,7 @@ function App() {
         <Route path='/comidas/hamburguesas' element={<Hamburguesas userGoogle={userGoogle} />}></Route>
         <Route path='/producto/:_id' element={<Producto userGoogle={userGoogle} />}></Route>
         <Route path='/auth/registrarse' element={<Registrarme />}></Route>
+        <Route path='/compras' element={<Carrito userGoogle={userGoogle} />}></Route>
       </Routes>
   </div>
   );

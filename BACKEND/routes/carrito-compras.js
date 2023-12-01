@@ -3,14 +3,14 @@ const router = express.Router();
 
 const { mostrarCarrito, agregarProductos, restarProductos, eliminarProductos } = require('../controllers/carrito-compras');
 
-router.route('/').get(mostrarCarrito)
+router.get('/', mostrarCarrito)
 
 
-router.route('/agregar').post(agregarProductos);
+router.post('/agregar', agregarProductos);
 
-router.route('/restar').post(restarProductos);
+router.post('/restar', restarProductos);
 
-router.route('/eliminar/:id').get(eliminarProductos);
+router.get('/eliminar/:id', eliminarProductos);
 
 
 module.exports = router;

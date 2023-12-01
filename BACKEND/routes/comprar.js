@@ -4,6 +4,6 @@ const router = express.Router();
 
 const { compra } = require('../controllers/comprar');
 
-router.route('/compra-realizada').post(compra)
+router.post('/compra-realizada', compra)
 
 module.exports = router;

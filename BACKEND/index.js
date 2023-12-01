@@ -12,6 +12,14 @@ const cookieSession = require('cookie-session')
 const passport = require('passport')
 const cors = require('cors')
 const GooglePassport = require('./config/config')
+
+
+
+//Configuración del formulario
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
+
 /* UTILIZAR COOKIES */
 app.use(cookieSession({
     keys:[process.env.KEY_COOKIE],

@@ -7,15 +7,15 @@ const mostrarCarrito= async(req, res) => {
             const carritoUsuario = await Compra.find({usuario: req.user._id})
             /* Si el usuario tiene elementos en su carrito, se muestra la "notificacion" */
             if(carritoUsuario && carritoUsuario.length > 0){
-                res.render('carrito',{carrito:carritoUsuario, user:req.user})
+                res.send({carrito:carritoUsuario, user:req.user})
             }
             /* Si el usuario no tiene elementos dentro del carrito, no se muestra la "notificacion" */
             else{
-                res.render('carrito', {carrito:[], user:req.user})
+                res.send({carrito:[], user:req.user})
             }
             /* Si el usuario no esta logueado, no se muestra la "notificacion" */
         } else{
-            res.render('carrito',{carrito:[], user:null})
+            res.send({carrito:[], user:null})
         }
     } catch(err){
         res.status(404).send('error: ' + err);
@@ -24,35 +24,44 @@ const mostrarCarrito= async(req, res) => {
 
 /* AGREGAR PRODUCTOS AL CARRITO */
 const agregarProductos = async (req, res) => {
-    const nombre = req.body.nombre
-    const imagen = req.body.imagen
-    const precio = req.body.precio
+    const productoId = req.body.productoId; // Se recibe el ID del producto a agregar
     try {
-        /* Accedemos al ID del usuario */
-        const usuarioId = req.user._id 
-        
-        /* Buscamos el carrito del usuario */
-        let carritoUsuario = await Compra.findOne({usuario: usuarioId})
-        
-        /* Si el usuario no tiene un carrito, creamos uno nuevo para el mismo */
-        if(!carritoUsuario){
-            carritoUsuario = new Compra({usuario: usuarioId, items:[]})
-        }
-        
-        /* Verificamos si el producto ya esta en el carrito */
-        const productoEncontrado = carritoUsuario.items.find(item => item.nombre === nombre)
-        
-        /* Si el producto fue encontrado, aumentamos la cantidad a 1 */
-        if(productoEncontrado){
-            productoEncontrado.cantidad += 1
-        }else{
-            /* Si el producto no fue encontrado, el mismo se agrega al carrito */
-            carritoUsuario.items.push({nombre, imagen, cantidad:1, precio})
-        }
-        /* Guardamos el carrito actualizado */
-        await carritoUsuario.save()
-        res.redirect('/compras');
+        const usuarioId = req.user._id;
 
+        // Buscamos el carrito del usuario
+        let carritoUsuario = await Compra.findOne({ usuario: usuarioId });
+
+        // Si el usuario no tiene un carrito, creamos uno nuevo para el mismo
+        if (!carritoUsuario) {
+            carritoUsuario = new Compra({ usuario: usuarioId, items: [] });
+        }
+
+        // Buscamos el producto por su ID
+        const productoEnCarrito = carritoUsuario.items.find(item => item.producto.toString() === productoId);
+
+        if (productoEnCarrito) {
+            // Si el producto ya está en el carrito, podrías aumentar la cantidad o realizar alguna acción adicional
+            // Por ejemplo, aumentar la cantidad en 1:
+            productoEnCarrito.cantidad += 1;
+        } else {
+            // Si el producto no está en el carrito, lo agregamos buscando por su ID
+            const productoEncontrado = await Comidas.findById(productoId);
+            if (productoEncontrado) {
+                carritoUsuario.items.push({
+                    producto: productoId,
+                    nombre: productoEncontrado.nombre,
+                    imagen: productoEncontrado.imgUrl,
+                    cantidad: 1,
+                    precio: productoEncontrado.precio
+                });
+            } else {
+                return res.status(404).json({ mensaje: "El producto no fue encontrado" });
+            }
+        }
+
+        // Guardamos el carrito actualizado
+        await carritoUsuario.save();
+        res.redirect('/compras');
     } catch (error) {
         return res.status(500).json({ mensaje: "Error interno del servidor", error: error.message });
     }

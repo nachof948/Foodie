@@ -74,6 +74,27 @@ const Carrito = ({ userGoogle }) => {
       console.log(error);
     }
   };
+    
+  const eliminarProducto = async (productoId) => {
+    try {
+      await axios.post('/compras/eliminar', { id: productoId });
+  
+      const updatedCarrito = carrito.map((item) => {
+        const updatedItems = item.items.filter((producto) => producto._id !== productoId);
+        return { ...item, items: updatedItems };
+      });
+      setCarrito(updatedCarrito);
+  
+      const totalPrice = updatedCarrito.reduce((acc, item) => (
+        acc + item.items.reduce((itemAcc, producto) => (
+          itemAcc + (producto.precio * producto.cantidad)
+        ), 0)
+      ), 0);
+      setTotal(totalPrice);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   
 
   
@@ -98,7 +119,7 @@ const Carrito = ({ userGoogle }) => {
                     <p className="product-quantity">{cantidad}</p>
                     <button className="comprar-ahora agregar" onClick={()=>sumarProducto(_id)}>+</button>
                     <p>$ {precio}</p>
-                    <button className='eliminar'>Eliminar</button>
+                    <button className='eliminar'onClick={()=>eliminarProducto(_id)}>Eliminar</button>
                   </div>
                 );
               })}

@@ -114,8 +114,16 @@ const restarProductos = async (req, res) => {
         /* Si está ese producto en el carrito, se suma 1 a la cantidad */
         if (productoEnCarrito) {
             productoEnCarrito.cantidad -= 1;
-            await compraUsuario.save();
-            res.send(productoEnCarrito)
+
+            /* Si la cantidad es menor o igual a 0, eliminamos el producto del carrito */
+            if (productoEnCarrito.cantidad <= 0) {
+                compraUsuario.items = compraUsuario.items.filter(item => !item._id.equals(productoObjectId));
+                await compraUsuario.save();
+                res.send(productoEnCarrito);
+            } else {
+                await compraUsuario.save();
+                res.send(productoEnCarrito);
+            }
         } else {
             res.send('Producto no encontrado en el carrito');
         }
@@ -131,13 +139,13 @@ const restarProductos = async (req, res) => {
 
 /* ELIMINAR PRODUCTO DEL CARRITO */
 const eliminarProductos = async (req, res) => {
-    const idProducto = req.params._id;
+    const productoId = req.body.id;
     const usuarioId = req.user._id;
 
     try {
         const carritoUsuario = await Carrito.findOneAndUpdate(
             { usuario: usuarioId },
-            { $pull: { items: { _id: idProducto } } },
+            { $pull: { items: { _id: productoId} } },
             { new: true }
         );
 

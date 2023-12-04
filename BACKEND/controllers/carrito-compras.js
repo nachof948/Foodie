@@ -137,6 +137,7 @@ const restarProductos = async (req, res) => {
 
 
 
+
 /* ELIMINAR PRODUCTO DEL CARRITO */
 const eliminarProductos = async (req, res) => {
     const productoId = req.body.id;

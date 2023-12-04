@@ -4,7 +4,7 @@ const router = express.Router();
 const { mostrarCarrito, agregarProductos, restarProductos, eliminarProductos, sumarProductos} = require('../controllers/carrito-compras');
 
 router.get('/', mostrarCarrito)
-/* router.post('/sumar', sumarProductos) */
+
 router.post('/agregar', agregarProductos);
 
 router.post('/sumar', sumarProductos)

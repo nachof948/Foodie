@@ -1,6 +1,6 @@
 const Compra = require('../models/Compra')
 const Comidas= require('../models/Comidas')
-
+const mongoose = require('mongoose')
 const mostrarCarrito= async(req, res) => { 
     try{
         if(req.user){
@@ -66,28 +66,62 @@ const agregarProductos = async (req, res) => {
         return res.status(500).json({ mensaje: "Error interno del servidor", error: error.message });
     }
 };
-const restarProductos = async (req, res) => {
-    const nombre = req.body.nombre;
 
+const sumarProductos = async (req, res) => {
+    const productoId = req.body.id;
     try {
-        const productoEnCarrito = await Compra.findOne({ nombre });
+        /* Tomamos el ID del usuario */
+        const usuarioId = req.user._id;
 
+        /* Buscamos el carrito del usuario */
+        let compraUsuario = await Compra.findOne({ usuario: usuarioId });
+        
+        /* Convertimos el productoId a un objeto ObjectId */
+        const productoObjectId = new mongoose.Types.ObjectId(productoId);
+
+        /* Buscamos el producto por su ID */
+        const productoEnCarrito = compraUsuario.items.find(item => item._id.equals(productoObjectId));
+
+        /* Si está ese producto en el carrito, se suma 1 a la cantidad */
         if (productoEnCarrito) {
-            if (productoEnCarrito.cantidad < 2) {
-                // Usar findByIdAndRemove en lugar de findOneAndDelete
-                await Compra.findByIdAndRemove(productoEnCarrito._id);
-            } else {
-                // Usar productoEnCarrito._id en lugar de id
-                await Compra.findByIdAndUpdate(productoEnCarrito._id, { cantidad: productoEnCarrito.cantidad - 1 });
-                productoEnCarrito.cantidad -= 1;
-                await productoEnCarrito.save();
-            }
+            productoEnCarrito.cantidad += 1;
+            await compraUsuario.save();
+            res.send(productoEnCarrito)
+        } else {
+            res.send('Producto no encontrado en el carrito');
         }
-
-        // Redirigir después de la operación de base de datos
-        res.redirect('/compras');
+        
     } catch (error) {
-        return res.status(500).json({ mensaje: "Error interno del servidor" });
+        console.log(error);
+    }
+};
+
+const restarProductos = async (req, res) => {
+    const productoId = req.body.id;
+    try {
+        /* Tomamos el ID del usuario */
+        const usuarioId = req.user._id;
+
+        /* Buscamos el carrito del usuario */
+        let compraUsuario = await Compra.findOne({ usuario: usuarioId });
+        
+        /* Convertimos el productoId a un objeto ObjectId */
+        const productoObjectId = new mongoose.Types.ObjectId(productoId);
+
+        /* Buscamos el producto por su ID */
+        const productoEnCarrito = compraUsuario.items.find(item => item._id.equals(productoObjectId));
+
+        /* Si está ese producto en el carrito, se suma 1 a la cantidad */
+        if (productoEnCarrito) {
+            productoEnCarrito.cantidad -= 1;
+            await compraUsuario.save();
+            res.send(productoEnCarrito)
+        } else {
+            res.send('Producto no encontrado en el carrito');
+        }
+        
+    } catch (error) {
+        console.log(error);
     }
 };
 
@@ -97,7 +131,7 @@ const restarProductos = async (req, res) => {
 
 /* ELIMINAR PRODUCTO DEL CARRITO */
 const eliminarProductos = async (req, res) => {
-    const idProducto = req.params.id;
+    const idProducto = req.params._id;
     const usuarioId = req.user._id;
 
     try {
@@ -131,4 +165,5 @@ module.exports ={
     agregarProductos,
     restarProductos,
     eliminarProductos,
+    sumarProductos
 }

@@ -14,7 +14,6 @@ const cors = require('cors')
 const GooglePassport = require('./config/config')
 
 
-
 //Configuración del formulario
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
@@ -36,11 +35,11 @@ app.use(passport.session({
 
 app.use(
     cors({
-    origin:'http://localhost:3000',
-    methods:'GET, POST, PUT, DELETE',
+    origin: 'http://localhost:3000',
+    methods: 'GET, POST, PUT, DELETE',
     credentials: true
-})
-)
+    })
+);
 
 /* PUERTO */
 const PUERTO = process.env.PUERTO
@@ -52,8 +51,6 @@ app.use('/', producto)
 app.use('/auth', registrarse)
 app.use('/compras', carrito)
 app.use('/', compra)
-
-
 /* CONEXION A LA BASE DE DATOS */
 const iniciar = async ()=>{
     try{

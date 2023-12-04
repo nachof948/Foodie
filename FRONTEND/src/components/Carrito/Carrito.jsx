@@ -21,6 +21,7 @@ const Carrito = ({ userGoogle }) => {
       .catch((error) => {
         console.log(error);
       });
+      window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
   const restarProducto = async (productoId) => {
     try {
@@ -29,10 +30,16 @@ const Carrito = ({ userGoogle }) => {
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
           if (producto._id === productoId) {
-            return { ...producto, cantidad: producto.cantidad - 1 };
+            const updatedCantidad = producto.cantidad - 1;
+            if (updatedCantidad <= 0) {
+              // Eliminar el producto del carrito si la cantidad es cero o menos
+              return null; // Marcamos el producto para eliminación
+            }
+            return { ...producto, cantidad: updatedCantidad };
           }
           return producto;
-        });
+        }).filter(Boolean); // Filtrar los productos marcados como null (eliminación)
+  
         return { ...item, items: updatedItems };
       });
   
@@ -48,6 +55,7 @@ const Carrito = ({ userGoogle }) => {
       console.log(error);
     }
   };
+  
 
   const sumarProducto = async (productoId) => {
     try {
@@ -78,11 +86,12 @@ const Carrito = ({ userGoogle }) => {
   const eliminarProducto = async (productoId) => {
     try {
       await axios.post('/compras/eliminar', { id: productoId });
+      
+      // Realizar una nueva solicitud para obtener el carrito actualizado después de eliminar el producto
+      const response = await axios.get('/compras');
+      const updatedCarrito = response.data.carrito;
   
-      const updatedCarrito = carrito.map((item) => {
-        const updatedItems = item.items.filter((producto) => producto._id !== productoId);
-        return { ...item, items: updatedItems };
-      });
+      // Actualizar el estado local del carrito y el total
       setCarrito(updatedCarrito);
   
       const totalPrice = updatedCarrito.reduce((acc, item) => (

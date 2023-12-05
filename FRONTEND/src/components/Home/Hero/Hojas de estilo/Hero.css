@@ -100,7 +100,7 @@
 
 /* IMAGENES-HERO */
 .hero-comida-principal{
-    width: 30rem;
+    width: 32rem;
     border-radius: 50%;
     border: 2.3rem solid var(--verde-claro);
     animation: girar infinite 40s linear;

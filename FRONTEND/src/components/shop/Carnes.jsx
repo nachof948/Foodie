@@ -30,8 +30,8 @@ const Carnes = ({userGoogle}) => {
                 <Shop />
               </div>
               <div className="comidas-shop">
-                {Carnes.map(comida => {
-                const { _id, nombre, descripcion, precio,imgUrl } = comida;
+                {Carnes.map(carne => {
+                const { _id, nombre, descripcion, precio,imgUrl } = carne;
                 return(
                   <div className='tarjeta tarjeta-producto'data-aos="fade-up" 
                   data-aos-duration="750">

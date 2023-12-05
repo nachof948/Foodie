@@ -21,11 +21,9 @@ const RecetasHabitual = () => {
         const {_id, nombre, descripcion,precio, estrellas, imgUrl} = habitual
         return(
           <div data-aos="fade-up" 
-          data-aos-duration="750">
+          data-aos-duration="750" key={_id}>
             <div className='tarjeta-habitual tarjeta-producto' 
-          onClick={()=>{mirarProducto(_id, navegar)}} 
-          key={_id}
-          >
+          onClick={()=>{mirarProducto(_id, navegar)}} >
             <img className='tarjeta-habitual-img' src={imgUrl} alt={nombre} loading="lazy" />
             <div className="tarjeta-textos-habitual">
               <h2>{nombre}</h2>

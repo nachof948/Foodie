@@ -35,8 +35,8 @@ const Opciones = () => {
         {opciones.slice(0, 4).map(opcion =>{
           const {nombre, descripcion, precio,imgUrl, _id} = opcion
           return(
-            <div className='tarjeta tarjeta-producto'>
-            <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} key={_id}> 
+            <div className='tarjeta tarjeta-producto'key={_id}>
+            <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} > 
               <img src={imgUrl} alt={nombre} loading="lazy" />
               <div className="tarjeta-textos">
                 <h2>{nombre}</h2>

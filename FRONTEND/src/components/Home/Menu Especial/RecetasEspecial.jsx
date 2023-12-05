@@ -24,8 +24,8 @@ const RecetasEspecial = () => {
 			{menuEspecial.slice(4,7).map(receta =>{
 				const {imgUrl, nombre, precio, estrellas, _id} = receta
         return(
-          <div  data-aos="zoom-in" data-aos-duration="750">
-            <div className='especial tarjeta-producto' key={_id} onClick={()=>{mirarProducto(_id, navegar)}} >
+          <div  data-aos="zoom-in" data-aos-duration="750" key={_id}>
+            <div className='especial tarjeta-producto'  onClick={()=>{mirarProducto(_id, navegar)}} >
             <img className='comida' src={imgUrl} alt={nombre} loading="lazy"/>
             <h2>{nombre}</h2>
               <div className="estrellas">

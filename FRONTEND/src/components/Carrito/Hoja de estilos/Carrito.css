@@ -77,6 +77,21 @@
     background-color: transparent;
     color: #83B64D;
 }
+.eliminar{
+    background-color: #83B64D;
+    color: #EEEEEE;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    margin: 0;
+    border: 1px solid #83B64D;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 250ms;
+}
+.eliminar:hover{
+    color: #83B64D;
+    background-color: transparent;
+}
 .buscar-productos{
     display: flex;
     flex-direction: column;

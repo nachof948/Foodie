@@ -6,7 +6,6 @@ import './Hojas de estilo/Opciones.css'
 
 const Opciones = () => {
   const [opciones, setOpciones] = useState([])
-  const [carrito, setCarrito] = useState([])
   const navegar = useNavigate()
   useEffect(() => {
     axios.get('/home')

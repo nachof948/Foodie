@@ -3,9 +3,11 @@ import { HeaderShop, Footer } from '../../indice';
 import axios from 'axios';
 import './Hoja de estilos/Carrito.css';
 
+
 const Carrito = ({ userGoogle }) => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
+
   useEffect(() => {
     axios.get('/compras')
       .then((response) => {
@@ -83,31 +85,30 @@ const Carrito = ({ userGoogle }) => {
     }
   };
     
-  const eliminarProducto = async (productoId) => {
-    try {
-      await axios.post('/compras/eliminar', { id: productoId });
-      
-      // Realizar una nueva solicitud para obtener el carrito actualizado después de eliminar el producto
-      const response = await axios.get('/compras');
-      const updatedCarrito = response.data.carrito;
+  const eliminarProducto = (id) => {
+    axios.delete(`/compras/eliminar/${id}`)
+      .then(() => {
+        const updatedCarrito = carrito.map((item) => {
+          const updatedItems = item.items.filter((producto) => producto._id !== id);
+          return { ...item, items: updatedItems };
+        });
+        if(updatedCarrito.length===0){
+          return null
+        }
+        setCarrito(updatedCarrito);
   
-      // Actualizar el estado local del carrito y el total
-      setCarrito(updatedCarrito);
-  
-      const totalPrice = updatedCarrito.reduce((acc, item) => (
-        acc + item.items.reduce((itemAcc, producto) => (
-          itemAcc + (producto.precio * producto.cantidad)
-        ), 0)
-      ), 0);
-      setTotal(totalPrice);
-    } catch (error) {
-      console.log(error);
-    }
+        const totalPrice = updatedCarrito.reduce((acc, item) => (
+          acc + item.items.reduce((itemAcc, producto) => (
+            itemAcc + (producto.precio * producto.cantidad)
+          ), 0)
+        ), 0);
+        setTotal(totalPrice);
+      })
+     
+      .catch((error) => {
+        console.log(error);
+      });
   };
-  
-
-  
-  
   return (
     <>
       <HeaderShop userGoogle={userGoogle} />

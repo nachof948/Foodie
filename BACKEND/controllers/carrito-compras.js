@@ -150,43 +150,23 @@ const restarProductos = async (req, res) => {
 /* ELIMINAR PRODUCTO DEL CARRITO */
 const eliminarProductos = async (req, res) => {
     const id = req.params.id;
-    const usuarioId = req.user._id
-    try{
+    const usuarioId = req.user._id;
+
+    try {
         const carritoUsuario = await Compra.findOneAndUpdate(
-            {usuario: usuarioId},
-            {$pull: {items: {_id: id}}},
-            {new: true}
-        )
-
-        if(carritoUsuario){
-            res.send(carritoUsuario);
-        } 
-            if(carritoUsuario.items.length === 0){
-                await Compra.findOneAndDelete({usuario: usuarioId})
-                res.send(carritoUsuario)
-            }
-        else{
-            res.send('No se encontro')
-        }
-
-
-    }catch (error) {console.log(error)}
-/*     try {
-        const carritoUsuario = await Carrito.findOneAndUpdate(
             { usuario: usuarioId },
-            { $pull: { items: { _id: id} } },
+            { $pull: { items: { _id: id } } },
             { new: true }
         );
 
         if (carritoUsuario) {
-            // Verificar si el carrito está vacío
             if (carritoUsuario.items.length === 0) {
                 // Si el carrito está vacío, eliminar el documento completo del carrito
-                await Carrito.findOneAndRemove({ usuario: usuarioId });
-                res.send(carritoUsuario)
+                await Compra.findOneAndDelete({ usuario: usuarioId });
+                res.send('Carrito vaciado');
             } else {
-                // Si el carrito no está vacío, redirigir a la página de compras
-                res.redirect('/compras');
+                // Si se eliminó el producto pero aún hay más en el carrito
+                res.send('Producto eliminado del carrito');
             }
         } else {
             res.status(404).send('No se encontró el carrito del usuario');
@@ -194,8 +174,9 @@ const eliminarProductos = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al eliminar el producto del carrito');
-    } */
+    }
 };
+
 
 module.exports ={
     mostrarCarrito,

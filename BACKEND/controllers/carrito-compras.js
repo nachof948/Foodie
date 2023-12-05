@@ -104,22 +104,30 @@ const restarProductos = async (req, res) => {
 
         /* Buscamos el carrito del usuario */
         let compraUsuario = await Compra.findOne({ usuario: usuarioId });
-        
+
         /* Convertimos el productoId a un objeto ObjectId */
         const productoObjectId = new mongoose.Types.ObjectId(productoId);
 
         /* Buscamos el producto por su ID */
         const productoEnCarrito = compraUsuario.items.find(item => item._id.equals(productoObjectId));
 
-        /* Si está ese producto en el carrito, se suma 1 a la cantidad */
+        /* Si está ese producto en el carrito, se resta 1 a la cantidad */
         if (productoEnCarrito) {
             productoEnCarrito.cantidad -= 1;
 
             /* Si la cantidad es menor o igual a 0, eliminamos el producto del carrito */
             if (productoEnCarrito.cantidad <= 0) {
+                // Eliminamos el producto del carrito
                 compraUsuario.items = compraUsuario.items.filter(item => !item._id.equals(productoObjectId));
-                await compraUsuario.save();
-                res.send(productoEnCarrito);
+
+                // Si ya no hay más productos en el carrito, eliminamos el registro del usuario del carrito
+                if (compraUsuario.items.length === 0) {
+                    await Compra.findOneAndDelete({ usuario: usuarioId });
+                    res.send('Carrito vacío, usuario eliminado del carrito');
+                } else {
+                    await compraUsuario.save();
+                    res.send(productoEnCarrito);
+                }
             } else {
                 await compraUsuario.save();
                 res.send(productoEnCarrito);
@@ -127,11 +135,12 @@ const restarProductos = async (req, res) => {
         } else {
             res.send('Producto no encontrado en el carrito');
         }
-        
+
     } catch (error) {
         console.log(error);
     }
 };
+
 
 
 

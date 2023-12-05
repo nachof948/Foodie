@@ -68,3 +68,6 @@ export { Shop } from  './components/shop/Shop'
 
 /* CARRITO DE COMPRAS */
 export { Carrito } from './components/Carrito/Carrito.jsx'
+
+/* COMPRA-REALIZADA */
+export { CompraRealizada } from './components/Compra-realizada/CompraRealizada.jsx'

@@ -47,7 +47,7 @@
     align-items: center;
     text-align: center;
     gap: 0.7rem;
-    transform: translateY(-50%);
+    transform: translateY(-65%);
 }
 .tarjeta-textos h2{
     font-size: 1.7rem;
@@ -61,6 +61,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    transform: translateY(-200%);
 }
 .opciones-comprar p{
     border: 1px solid var(--negro);

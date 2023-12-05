@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AOS from 'aos'
 import { useNavigate } from 'react-router-dom';
-/* import { mirarProducto } from '../../../Funciones/mirarProducto'; */
+import { mirarProducto } from '../../../Funciones/mirarProducto';
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';
 import 'aos/dist/aos.css'
 
@@ -24,7 +24,8 @@ const RecetasEspecial = () => {
 			{menuEspecial.slice(4,7).map(receta =>{
 				const {imgUrl, nombre, precio, estrellas, _id} = receta
         return(
-          <div className='especial tarjeta-producto' key={_id} /* onClick={()=>{mirarProducto(_id, navegar)}}  */ data-aos="zoom-in" data-aos-duration="750">
+          <div  data-aos="zoom-in" data-aos-duration="750">
+            <div className='especial tarjeta-producto' key={_id} onClick={()=>{mirarProducto(_id, navegar)}} >
             <img className='comida' src={imgUrl} alt={nombre} loading="lazy"/>
             <h2>{nombre}</h2>
               <div className="estrellas">
@@ -38,8 +39,10 @@ const RecetasEspecial = () => {
               <div className="precio">
                 <p>${precio}</p>
               </div>
-              <button className='comprar-ahora bolsa' onClick={()=>{agregarAlCarrito(_id, navegar)}}><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></button>
           </div>
+            <button className='comprar-ahora bolsa' onClick={()=>{agregarAlCarrito(_id, navegar)}}><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></button>
+          </div>
+          
         )
 			})}
     </>

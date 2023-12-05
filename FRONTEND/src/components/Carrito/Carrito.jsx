@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { HeaderShop, Footer } from '../../indice';
 import axios from 'axios';
 import './Hoja de estilos/Carrito.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const Carrito = ({ userGoogle }) => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
-
+  const navegar = useNavigate()
   useEffect(() => {
     axios.get('/compras')
       .then((response) => {
@@ -109,6 +110,13 @@ const Carrito = ({ userGoogle }) => {
         console.log(error);
       });
   };
+  const comprarProducto = ()=>{
+    axios.post('/compra-realizada')
+    .then(()=>{
+      navegar('/compra-realizada')
+    })
+    .catch((error) => console.log(error))
+  }
   return (
     <>
       <HeaderShop userGoogle={userGoogle} />
@@ -140,7 +148,7 @@ const Carrito = ({ userGoogle }) => {
           <div className="realizar-compra">
             <div className="comprar-carrito">
               <p>Total:${total}</p>
-              <button className="compra">Comprar</button>
+              <button className="compra" onClick={()=> comprarProducto()}>Comprar</button>
               <div>
                 <a className="explorar" href="/comidas/all">Explorar más</a>
               </div>

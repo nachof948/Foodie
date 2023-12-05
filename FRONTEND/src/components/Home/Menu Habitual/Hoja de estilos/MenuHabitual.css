@@ -64,7 +64,7 @@
     transform: translateY(-60%);
 }
 .tarjeta-textos-habitual{
-    transform: translateY(-60%);
+    transform: translateY(-75%);
     padding-bottom: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -89,6 +89,8 @@
     align-items: center;
     gap: 1rem;
     margin-top: 0.5rem;
+    position: absolute;
+    transform: translate(45%,-175%);
 }
 .opciones-comprar-habitual p{
     border: 1px solid var(--negro);

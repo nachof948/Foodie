@@ -1,6 +1,6 @@
 import axios from 'axios';
 const agregarAlCarrito = (productoId, navegar) => {
-    // Realizar una solicitud al servidor para agregar el producto al carrito por su ID
+  // Realizar una solicitud al servidor para agregar el producto al carrito por su ID
     axios.post('/compras/agregar', { productoId })
       .then((response) => {
         navegar('/compras')

@@ -110,13 +110,13 @@
 .bolsa{
     background-color: #84B74E;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    transform: translate(280%, -100%);
     border: none;
     padding: 3rem 2.5rem;
     border-radius:8px;
     cursor: pointer;
     transition: all 250ms;
+
 }
 .bolsa:hover{
     background-color: #aed882;

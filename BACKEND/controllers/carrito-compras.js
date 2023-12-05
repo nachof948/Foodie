@@ -149,13 +149,32 @@ const restarProductos = async (req, res) => {
 
 /* ELIMINAR PRODUCTO DEL CARRITO */
 const eliminarProductos = async (req, res) => {
-    const productoId = req.body.id;
-    const usuarioId = req.user._id;
+    const id = req.params.id;
+    const usuarioId = req.user._id
+    try{
+        const carritoUsuario = await Compra.findOneAndUpdate(
+            {usuario: usuarioId},
+            {$pull: {items: {_id: id}}},
+            {new: true}
+        )
 
-    try {
+        if(carritoUsuario){
+            res.send(carritoUsuario);
+        } 
+            if(carritoUsuario.items.length === 0){
+                await Compra.findOneAndDelete({usuario: usuarioId})
+                res.send(carritoUsuario)
+            }
+        else{
+            res.send('No se encontro')
+        }
+
+
+    }catch (error) {console.log(error)}
+/*     try {
         const carritoUsuario = await Carrito.findOneAndUpdate(
             { usuario: usuarioId },
-            { $pull: { items: { _id: productoId} } },
+            { $pull: { items: { _id: id} } },
             { new: true }
         );
 
@@ -164,7 +183,7 @@ const eliminarProductos = async (req, res) => {
             if (carritoUsuario.items.length === 0) {
                 // Si el carrito está vacío, eliminar el documento completo del carrito
                 await Carrito.findOneAndRemove({ usuario: usuarioId });
-                res.redirect('/compras');
+                res.send(carritoUsuario)
             } else {
                 // Si el carrito no está vacío, redirigir a la página de compras
                 res.redirect('/compras');
@@ -175,7 +194,7 @@ const eliminarProductos = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send('Error al eliminar el producto del carrito');
-    }
+    } */
 };
 
 module.exports ={

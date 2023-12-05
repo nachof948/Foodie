@@ -11,7 +11,7 @@ router.post('/sumar', sumarProductos)
 
 router.post('/restar', restarProductos);
 
-router.delete('/eliminar', eliminarProductos);
+router.delete('/eliminar/:id', eliminarProductos);
 
 
 module.exports = router;

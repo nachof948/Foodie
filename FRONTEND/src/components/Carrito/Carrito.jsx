@@ -147,8 +147,10 @@ const Carrito = ({ userGoogle }) => {
         {carrito.length !== 0 && (
           <div className="realizar-compra">
             <div className="comprar-carrito">
-              <p>Total:${total}</p>
-              <button className="compra" onClick={()=> comprarProducto()}>Comprar</button>
+              <div className='comprar'>
+                <p>Total:${total}</p>
+                <button className="compra" onClick={()=> comprarProducto()}>Comprar</button>
+              </div>
               <div>
                 <a className="explorar" href="/comidas/all">Explorar más</a>
               </div>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { HeaderShop,Shop, Footer } from '../../indice';
 import { useNavigate } from 'react-router-dom';
 import { mirarProducto } from '../../Funciones/mirarProducto';
+import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -31,19 +32,22 @@ const Veganos = ({userGoogle}) => {
             <div className="comidas-shop">
               {Veganos.map(comida => {
               const { _id, nombre, descripcion, precio,imgUrl } = comida;
-              return (
-                <div className='tarjeta-shop tarjeta-producto' key={_id}  onClick={()=>{mirarProducto(_id, navegar)}} data-aos="fade-up" data-aos-duration="750">
-                  <img src={imgUrl} alt={nombre} loading="lazy"/>
-                  <div className="tarjeta-shop-textos">
+              return(
+                <div className='tarjeta tarjeta-producto'data-aos="fade-up" 
+                data-aos-duration="750">
+                <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} key={_id}> 
+                  <img src={imgUrl} alt={nombre} loading="lazy" />
+                  <div className="tarjeta-textos">
                     <h2>{nombre}</h2>
                     <p>{descripcion}</p>
                   </div>
-                  <div className="opciones-comprar">
-                    <p>${precio}</p>
-                    <button className='comprar-ahora'>Comprar Ahora</button>
-                  </div>
                 </div>
-              );
+                <div className="opciones-comprar">
+                      <p>${precio}</p>
+                      <button className='comprar-ahora' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                    </div>
+                </div> 
+              )
               })}
             </div>
         </div>

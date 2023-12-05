@@ -36,8 +36,9 @@
 .comidas-shop {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
+    row-gap: 10rem;
+    column-gap: 3rem;
+    margin-top: 10rem;
     flex-wrap: wrap;
 }
 .tarjeta-shop{

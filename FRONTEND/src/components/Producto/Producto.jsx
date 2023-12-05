@@ -1,7 +1,8 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { HeaderShop, Footer } from '../../indice'
+import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import './Hoja de estilos/Producto.css'
 
 const Producto = ({userGoogle}) => {
@@ -12,7 +13,8 @@ const Producto = ({userGoogle}) => {
   const [rating, setRating] = useState('')
   const [vendidos, setVendidos] = useState('')
   const [precio, setPrecio] = useState('')
-
+  const [_id, set_Id] = useState('')
+  const navegar = useNavigate()
   useEffect(()=>{
     axios.post(`/producto/${params._id}`)
     .then((response)=>{
@@ -23,6 +25,7 @@ const Producto = ({userGoogle}) => {
       setRating(datos.rating)
       setVendidos(datos.vendidos)
       setPrecio(datos.precio)
+      set_Id(datos._id)
     })
     .catch((error)=>{console.log(error)})
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -52,7 +55,7 @@ const Producto = ({userGoogle}) => {
             </div>
             <p className='precio-producto'>${precio}</p>
             <p className='descripcion-extensa-producto'>{descripcionExtensa}</p>
-            <button className='comprar-ahora comprar-producto'>Comprar Ahora</button>
+            <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
           </div>
         </section>
       </main> 

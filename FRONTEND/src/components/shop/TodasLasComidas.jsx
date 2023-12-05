@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Footer, HeaderShop, Shop } from '../../indice';
 import './Hoja de estilos/Shop.css'
 import { useNavigate } from 'react-router-dom';
+import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import { mirarProducto } from '../../Funciones/mirarProducto';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -33,20 +34,23 @@ const TodasLasComidas = ({userGoogle}) => {
               <div className="comidas-shop">
                 {todasLasComidas.map(comida => {
                 const { _id, nombre, descripcion, precio,imgUrl } = comida;
-                return (
-                  <div className='tarjeta-shop tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} key={_id} data-aos="fade-up" data-aos-duration="750">
-                    <img src={imgUrl} alt="" width={"200px"} loading="lazy"/>
-                    <div className="tarjeta-shop-textos">
+                return(
+                  <div className='tarjeta tarjeta-producto'data-aos="fade-up" 
+                  data-aos-duration="750">
+                  <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} key={_id}> 
+                    <img src={imgUrl} alt={nombre} loading="lazy" />
+                    <div className="tarjeta-textos">
                       <h2>{nombre}</h2>
                       <p>{descripcion}</p>
+                      
                     </div>
-                    <div className="opciones-comprar">
-                      <p>${precio}</p>
-                      <button className='comprar-ahora'>Comprar Ahora</button>
-                    </div>
-                    
                   </div>
-                );
+                  <div className="opciones-comprar">
+                        <p>${precio}</p>
+                        <button className='comprar-ahora' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                      </div>
+                  </div> 
+                )
                 })}
               </div>
           </div>

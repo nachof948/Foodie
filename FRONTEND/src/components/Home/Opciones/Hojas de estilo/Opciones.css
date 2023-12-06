@@ -314,6 +314,7 @@
 @media (max-width:400px) {
     .seccion-opciones{
         margin: -2rem 0rem 0rem;
+        padding: 8rem 0rem 0rem;
     }
 }
 @media (max-width:360px) {

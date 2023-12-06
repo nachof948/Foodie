@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Lupa, CarritoDeCompras, Registrarse, Logo} from '../../../indice'
+import {Lupa, CarritoDeCompras, Registrarse} from '../../../indice'
 const MenuResponsive = ({userGoogle}) => {
   const [menuDesplegado, setMenuDesplegado] = useState(false)
 
@@ -9,7 +9,7 @@ const MenuResponsive = ({userGoogle}) => {
   return(
     <div className='contenedor-responsive'>
       <div className='logo-responsive'>
-        <Logo />
+        <a className='empresa-responsive' href='/'>FOODIED</a>
       </div>
       {menuDesplegado &&
       <div className='menu-responsivo'>

@@ -25,8 +25,13 @@ const Registrarse = ({ userGoogle }) => {
             <p>{userGoogle.username}</p>
           </div>
           {logout && 
-            <div className="cerrar-sesion">
+            <div className='logout'>
+              <div className="cerrar-sesion">
               <button onClick={cerrarSesion}>Cerrar Sesion</button>
+            </div>
+            <div className="cerrar-sesion-responsive">
+              <button onClick={cerrarSesion}>Cerrar Sesion</button>
+            </div>
             </div>
           }
         </div>

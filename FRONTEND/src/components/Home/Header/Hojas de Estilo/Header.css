@@ -81,7 +81,7 @@ nav a:hover{
     font-size: 3rem;
     border: none;
 }
-.logo-responsive{
+.empresa-responsive{
     display: none;
 }
 
@@ -122,6 +122,9 @@ nav a:hover{
 .registrarse:hover p,
 .cerrar-sesion:hover button{
     color: var(--verde-claro);
+}
+.cerrar-sesion-responsive button{
+    display: none;
 }
 .cerrar-sesion button{
     position: absolute;
@@ -242,7 +245,8 @@ nav a:hover{
     }
     .nav-pc,
     .header-derecha,
-    .logo{
+    .logo .empresa,
+    .cerrar-sesion button{
         display: none;
     }
     .header-derecha-responsive{
@@ -256,11 +260,31 @@ nav a:hover{
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        height: 70vh;
+        height: fit-content;
     }
     .menu-responsive{
         display: block;
         cursor: pointer;
+    }
+    .logout{
+        display: flex;
+        justify-content: center;
+    }
+    .cerrar-sesion-responsive button{
+        display: block;
+        background-color: var(--verde-muy-claro);
+        border: none;
+        padding: 0.8rem 1.7rem;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 200ms ease;
+        margin-top: 0.5rem;
+    }
+    .cerrar-sesion-responsive:hover button{
+        color: var(--verde-claro);
     }
     .menu-responsive i{
         font-size: 3.5rem;
@@ -268,10 +292,12 @@ nav a:hover{
     .menu-responsive:hover{
         filter: drop-shadow(2px 2px 5px white);
     }
-    .logo-responsive{
-        position: relative;
+    .empresa-responsive{
         display: block;
-        bottom: 0.8rem;
+        font-size: 2rem;
+        font-weight: 700;
+        position: relative;
+        bottom: 0.6rem;
     }
     .contenedor-responsive{
         width: 85vw;
@@ -280,7 +306,7 @@ nav a:hover{
         justify-content: space-between;
         margin: 0 auto;
     }
-    nav{
+    .nav-responsive{
         flex-direction: column;
         align-items: center;
         gap: 2rem;
@@ -288,7 +314,7 @@ nav a:hover{
     nav a{
         font-size: 1.3rem;
     }
-    .header-derecha{
+    .header-derecha-responsive{
         margin-top: 2rem;
         flex-direction: column;
         align-items: center;
@@ -303,13 +329,9 @@ nav a:hover{
     .header-iconos a{
         font-size: 1rem;
     }
-    .cerrar-sesion button{
-        top: 22rem;
-        right: 25rem;
-        padding: 0.6rem 1.4rem;
-        font-size: 1.1rem;
-    }
-}
+}   
+    
+
 @media (max-width:768px) {
     .contenedor-header{
         width: 95vw;

@@ -162,9 +162,6 @@
         font-size: 3.5rem;
         width: 100%;
     }
-    .contenedor-opciones{
-        gap: 2rem;
-    }
     .tarjeta img{
         width: 12rem;
         bottom: 14rem;
@@ -382,15 +379,8 @@
     .textos-hero p{
         font-size: 0.9rem;
     }
-    .swiper-wrapper-hero{
-        right: 1.3rem;
-    }
 }
-@media (max-width:550px) {
-    .swiper-wrapper{
-        right: 2.7rem;
-    }
-}
+
 @media (max-width:500px) {
     .swiper-wrapper-hero{
         padding-left: 7rem;
@@ -409,40 +399,9 @@
         font-size: 0.9rem;
         padding: 0.8rem 0.8rem;
     }
-    .swiper-button-prev::after,
-    .swiper-button-next::after{
-        font-size: 2rem;
-        position: relative;
-        top: 0.4rem;
-        left: 0.3rem;
-    }
-    .swiper-button-prev,
-    .swiper-button-next{
-        padding: 0.2rem 0.5rem;
 }
-}
-@media (max-width:480px) {
-    .swiper-wrapper-hero{
-        padding-left: 6rem;
-    }
-    .swiper-slide-hero{
-        margin-top: 2rem;
-    }
-    .swiper-button-prev,
-    .swiper-button-next{
-        margin-top: -5rem;  
-    } 
-}
-@media (max-width:450px) {
-    .swiper-wrapper-hero{
-        padding-left: 5.5rem;
-    }
-    
-}
+
 @media (max-width:400px) {
-    .swiper-slide-hero{
-        margin-top: 1rem;
-    }
     .textos-hero p{
         font-size: 0.8rem;
         width: 100%;
@@ -454,37 +413,10 @@
         font-size: 0.9rem;
         padding: 0.6rem 0.6rem;
     }
-    .swiper-button-prev,
-    .swiper-button-next{
-        margin-top: -7rem;  
-        background-color: transparent;
-        margin-inline: -1rem ;
-    } 
-    .swiper-button-prev:hover,
-    .swiper-button-next:hover{
-        color: #779e4c;
-    } 
-    .swiper-button-prev::after,
-    .swiper-button-next::after{
-        font-size: 1.8rem;
-    }
 }
-@media (max-width:360px) {
-    .swiper-slide-hero{
-        margin-top: 3rem;
-    }
-    .swiper-button-prev,
-    .swiper-button-next{
-        margin-top: -6rem;  
-    }
-    .swiper-button-prev::after,
-    .swiper-button-next::after{
-        font-size: 1.2rem;
-        top: 0.7rem;
-        left: 0.5rem;
-    } 
+@media (max-width:360px) { 
     .textos-hero h1{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
     .textos-hero p{
         font-size: 0.8rem;
@@ -499,21 +431,8 @@
     }
 }
 @media (max-width:322px) {
-    .swiper-slide-hero{
-        margin-top: 4rem;
-    }
-    .swiper-button-prev,
-    .swiper-button-next{
-        margin-top: -2rem;  
-        background-color: transparent;
-        margin-inline: -1rem ;
-    }
-    .swiper-button-prev::after,
-    .swiper-button-next::after{
-        font-size: 1.2rem;
-    } 
     .textos-hero h1{
-        font-size: 1rem;
+        font-size: 1.3rem;
         width: 100%;
     }
     .textos-hero p{

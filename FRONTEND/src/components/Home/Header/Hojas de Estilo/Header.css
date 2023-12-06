@@ -315,9 +315,10 @@ nav a:hover{
         font-size: 1.3rem;
     }
     .header-derecha-responsive{
-        margin-top: 2rem;
+        margin-top: 1rem;
         flex-direction: column;
         align-items: center;
+        gap: 1.8rem;
     }
     .btn-sesion{
         font-size: 1.2rem;

@@ -8,6 +8,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const Sushi = ({userGoogle}) => {
+  const [loading, setLoading] = useState(true)
   const navegar = useNavigate()
   useEffect(()=>{AOS.init()},[])
 
@@ -15,7 +16,11 @@ const Sushi = ({userGoogle}) => {
   useEffect(()=>{
     axios.get('/comidas/Sushi')
     .then((response)=>{
-      setSushi(response.data.comidas);
+      const delay = setTimeout(() => {
+        setLoading(false); // Actualiza el estado de carga después del tiempo de espera
+        setSushi(response.data.comidas);
+      }, 1000);
+      return () => clearTimeout(delay);
     })
     .catch((error)=>{console.log(error)})
   },[])
@@ -29,27 +34,31 @@ const Sushi = ({userGoogle}) => {
             <div className="titulos">
               <Shop />
             </div>
-            <div className="comidas-shop">
-              {Sushi.map(comida => {
-              const { _id, nombre, descripcion, precio,imgUrl } = comida;
-              return(
-                <div data-aos="fade-up" 
-                data-aos-duration="750">
-                <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} key={_id}> 
-                  <img src={imgUrl} alt={nombre} loading="lazy" />
-                  <div className="tarjeta-textos">
-                    <h2>{nombre}</h2>
-                    <p>{descripcion}</p>
-                  </div>
-                </div>
-                <div className="opciones-comprar">
-                      <p>${precio}</p>
-                      <button className='comprar-ahora' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+            {loading ? (
+                <div className="spinner"></div>
+              ):(
+                <div className="comidas-shop">
+                {Sushi.map(carne => {
+                const { _id, nombre, descripcion, precio,imgUrl } = carne;
+                return(
+                  <div data-aos="fade-up" 
+                  data-aos-duration="750">
+                  <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} key={_id}> 
+                    <img src={imgUrl} alt={nombre} loading="lazy" />
+                    <div className="tarjeta-textos">
+                      <h2>{nombre}</h2>
+                      <p>{descripcion}</p>
                     </div>
-                </div> 
-              )
-              })}
-            </div>
+                  </div>
+                  <div className="opciones-comprar">
+                        <p>${precio}</p>
+                        <button className='comprar-ahora' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                      </div>
+                  </div> 
+                )
+                })}
+              </div>
+              )}
         </div>
       </section>
     </main>

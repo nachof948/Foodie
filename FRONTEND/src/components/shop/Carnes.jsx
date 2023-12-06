@@ -10,12 +10,16 @@ import 'aos/dist/aos.css'
 const Carnes = ({userGoogle}) => {
   const navegar = useNavigate()
   useEffect(()=>{AOS.init()},[])
-  
+  const [loading, setLoading] = useState(true)
   const [Carnes, setCarnes] = useState([])
   useEffect(()=>{
     axios.get('/comidas/carnes')
     .then((response)=>{
+      const delay = setTimeout(() => {
+        setLoading(false); // Actualiza el estado de carga después del tiempo de espera
+      }, 1000);
       setCarnes(response.data.comidas);
+      return () => clearTimeout(delay);
     })
     .catch((error)=>{console.log(error)})
   },[])
@@ -29,7 +33,10 @@ const Carnes = ({userGoogle}) => {
               <div className="titulos">
                 <Shop />
               </div>
-              <div className="comidas-shop">
+              {loading ? (
+                <div className="spinner"></div>
+              ):(
+                <div className="comidas-shop">
                 {Carnes.map(carne => {
                 const { _id, nombre, descripcion, precio,imgUrl } = carne;
                 return(
@@ -50,6 +57,7 @@ const Carnes = ({userGoogle}) => {
                 )
                 })}
               </div>
+              )}
           </div>
         </section>
       </main>

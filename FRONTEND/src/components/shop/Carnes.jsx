@@ -33,7 +33,7 @@ const Carnes = ({userGoogle}) => {
                 {Carnes.map(carne => {
                 const { _id, nombre, descripcion, precio,imgUrl } = carne;
                 return(
-                  <div className='tarjeta tarjeta-producto'data-aos="fade-up" 
+                  <div data-aos="fade-up" 
                   data-aos-duration="750">
                   <div className='tarjeta tarjeta-producto' onClick={()=>{mirarProducto(_id, navegar)}} key={_id}> 
                     <img src={imgUrl} alt={nombre} loading="lazy" />

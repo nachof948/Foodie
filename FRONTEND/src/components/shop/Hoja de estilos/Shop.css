@@ -39,7 +39,6 @@
     row-gap: 10rem;
     column-gap: 3rem;
     margin-top: 10rem;
-    flex-wrap: wrap;
 }
 .tarjeta-shop{
     margin-top: 7rem;
@@ -82,3 +81,46 @@
     left: 3.8em;
 }
 
+@media (max-width:1024px) {
+    .comidas-shop{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:800px) {
+    .titulos{
+        gap: 2rem;
+    }
+    .titulos a{
+        font-size: 1.2rem;
+    }
+    .shop h1{
+        font-size: 3rem;
+    }
+    .comidas-shop{
+        margin-top: 6rem;
+    }
+}
+@media (max-width:540px) {
+    .titulos{
+        gap: 1.5rem;
+    }
+    .titulos a{
+        font-size: 1rem;
+    }
+    .shop h1{
+        font-size: 2.4rem;
+    }
+}
+@media (max-width:435px) {
+    .shop h1{
+        font-size: 1.8rem;
+    }
+}
+@media (max-width:330px) {
+    .shop h1{
+        font-size: 1.6rem;
+    }
+}

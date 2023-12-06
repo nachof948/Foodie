@@ -8,6 +8,7 @@ export { NavBar } from  './components/Home/Header/NavBar'
 export { Lupa } from  './components/Home/Header/Lupa'
 export { CarritoDeCompras } from  './components/Home/Header/CarritoDeCompras'
 export { Registrarse } from  './components/Home/Header/Registrarse'
+export { MenuResponsive } from './components/Home/Header/MenuResponsive.jsx'
 
 /* HOME-HERO */
 export { Hero } from './components/Home/Hero/Hero'

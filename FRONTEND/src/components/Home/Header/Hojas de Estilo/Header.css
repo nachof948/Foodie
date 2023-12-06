@@ -74,6 +74,16 @@ nav a:hover{
 .header-iconos a:hover{
     color: var(--verde-claro);
 }
+.menu-responsive{
+    display: none;
+    background-color: transparent;
+    color: #F9FAFC;
+    font-size: 3rem;
+    border: none;
+}
+.logo-responsive{
+    display: none;
+}
 
 /* REGISTRARSE */
 .registrarse {
@@ -91,6 +101,12 @@ nav a:hover{
     border-radius: 25px;
     cursor: pointer;
     transition: all 200ms ease;
+}
+.registrarse p {
+    max-width: 170px; /* Cambia este valor al ancho máximo deseado */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .avatar{
     border-radius: 50%;
@@ -110,7 +126,7 @@ nav a:hover{
 .cerrar-sesion button{
     position: absolute;
     top: 4rem;
-    right: 2rem;
+    right: 1.4rem;
     background-color: var(--verde-muy-claro);
     border: none;
     padding: 1rem 2rem;
@@ -120,3 +136,251 @@ nav a:hover{
     font-weight: 700;
     cursor: pointer;
 }
+
+
+/* MEDIA-QUERIES */
+
+/* MEDIA QUERIES HEADER */
+/* ====COMPUTADORA O LAPTOP==== */
+@media (max-width:1600px) {
+    nav{
+        gap: 5rem;
+    }
+}
+@media (max-width:1500px) {
+    nav{
+        gap: 4.5rem;
+    }
+}
+@media (max-width:1350px) {
+    nav{
+        gap: 3rem;
+    }
+    .empresa{
+        font-size: 1.7rem;
+    }
+    .btn-sesion{
+        font-size: 0.9rem;
+        padding: 0.7rem 0.4rem;
+    }
+    .header-iconos a{
+        font-size: 1.2rem;
+        padding: 0.5rem 0.6rem;
+    }
+    .perfil{
+        font-size: 1.1rem;
+        padding: 0.2rem 0.5rem;
+    }
+    .cerrar-sesion{
+        top: 3rem;
+    }
+}
+@media (max-width:1270px) {
+    nav{
+        gap: 2.5rem;
+    }
+    .empresa{
+        font-size: 1.5rem;
+    }
+    .header-iconos a{
+        font-size: 1.1rem;
+    }
+    .perfil{
+        font-size: 1rem;
+    }
+    .header-derecha{
+        gap: 2rem;
+    }
+    .registrarse {
+        font-size: 1.1rem;
+    }
+    .cerrar-sesion button{
+        right: 1rem;
+        padding: 0.8rem 1.7rem;
+    }
+}
+@media (max-width:1150px) {
+    nav a{
+        font-size: 1rem;
+    }
+    .empresa{
+        font-size: 1.5rem;
+    }
+    .header-iconos a{
+        font-size: 1rem;
+    }
+    .header-derecha{
+        gap: 2rem;
+    }
+    .cerrar-sesion{
+        left: 8.2rem;
+    }
+    .registrarse {
+        font-size: 1rem;
+    }
+    .avatar{
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+    .cerrar-sesion button{
+        top: 3.5rem;
+        right: 1rem;
+        padding: 0.6rem 1.4rem;
+        font-size: 1.1rem;
+    }
+}
+@media (max-width:1150px) {
+    nav{
+        gap: 2rem;
+    }
+}
+/* =====FIN COMPUTADORA O LAPTOP===== */
+/* ====TABLET===== */
+@media (max-width:1024px) {
+    header{
+        background-color: #83B64D;
+    }
+    .nav-pc,
+    .header-derecha,
+    .logo{
+        display: none;
+    }
+    .header-derecha-responsive{
+        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .menu-responsivo{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 70vh;
+    }
+    .menu-responsive{
+        display: block;
+        cursor: pointer;
+    }
+    .menu-responsive i{
+        font-size: 3.5rem;
+    }
+    .menu-responsive:hover{
+        filter: drop-shadow(2px 2px 5px white);
+    }
+    .logo-responsive{
+        position: relative;
+        display: block;
+        bottom: 0.8rem;
+    }
+    .contenedor-responsive{
+        width: 85vw;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+    nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    nav a{
+        font-size: 1.3rem;
+    }
+    .header-derecha{
+        margin-top: 2rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-sesion{
+        font-size: 1.2rem;
+        padding: 0.7rem 0.4rem;
+    }
+    .perfil{
+        font-size: 1.1rem;
+    }
+    .header-iconos a{
+        font-size: 1rem;
+    }
+    .cerrar-sesion button{
+        top: 22rem;
+        right: 25rem;
+        padding: 0.6rem 1.4rem;
+        font-size: 1.1rem;
+    }
+}
+@media (max-width:768px) {
+    .contenedor-header{
+        width: 95vw;
+    }
+}
+@media (max-width:550px) {
+    .contenedor-menu-responsive{
+        margin-top: -2.5rem;
+    }
+    nav{
+        gap: 1.5rem;
+    }
+    nav a{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width:330px) {
+    nav{
+        gap: 0.7rem;
+    }
+    .btn-sesion{
+        font-size: 1.2rem;
+    }
+}
+@media (min-height:1201px) and (max-height:1500px) {
+    .contenedor-menu-responsive.activo{
+        height: 34vh;
+    }
+}
+@media (min-height:1051px) and (max-height:1200px) {
+    .contenedor-menu-responsive.activo{
+        height: 39vh;
+    }
+}
+@media (min-height:1000px) and (max-height:1050px) {
+    .contenedor-menu-responsive.activo{
+        height: 43vh;
+    }
+}
+@media (min-height:901px) and (max-height:999px) {
+    .contenedor-menu-responsive.activo{
+        height: 46vh;
+    }
+}
+@media (min-height:810px) and (max-height:899px) {
+    .contenedor-menu-responsive.activo{
+        height: 58vh;
+    }
+}
+@media (min-height:800px) and (max-width:370px){
+    .contenedor-menu-responsive.activo{
+        height: 52vh;
+    }
+}
+@media (min-height:600px) and (max-height:799px) {
+    .contenedor-menu-responsive.activo{
+        height: 72vh;
+    }
+}
+@media (min-height:500px) and (max-height:599px) {
+    .contenedor-menu-responsive.activo{
+        height: 77vh;
+    }
+}
+@media (min-height:300px) and (max-height:499px) {
+    .contenedor-menu-responsive.activo{
+        height: 77vh;
+    }
+}
+/* ====FIN TABLET===== */
+/* FIN MEDIA QUERIES HEADER */
+
+
+/* FIN MEDIA-QUERIES */

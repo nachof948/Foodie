@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CarritoDeCompras, Logo, Lupa, NavBar, Registrarse } from '../../../indice';
+import { CarritoDeCompras, Logo, Lupa, MenuResponsive, NavBar, Registrarse } from '../../../indice';
 import './Hojas de Estilo/Header.css'
 
 const Header = ({userGoogle}) => {
@@ -36,6 +36,9 @@ const Header = ({userGoogle}) => {
           </div>
           <Registrarse userGoogle={userGoogle} />
         </div>
+      </div>
+      <div >
+        <MenuResponsive userGoogle={userGoogle}/>
       </div>
     </header>
   )

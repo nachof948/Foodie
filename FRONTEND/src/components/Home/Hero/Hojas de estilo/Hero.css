@@ -122,3 +122,411 @@
         transform: rotate(360deg);
     }
 }
+/* MEDIA QUERIES */
+/* ====COMPUTADORA Y LAPTOP===== */
+@media (max-width:1900px) {
+    .textos-hero h1{
+        font-size: 4.8rem;
+    }
+}
+@media (max-width:1850px) {
+    .textos-hero h1{
+        font-size: 4.7rem;
+    }
+}
+@media (max-width:1800px) {
+    .textos-hero h1{
+        font-size: 4.2rem;
+        width: 85%;
+    }
+
+}
+@media (max-width:1750px) {
+    .textos-hero h1{
+        font-size: 3.6rem;
+        width: 85%;
+        line-height: 5rem;
+    }
+}
+@media (max-width:1650px) {
+    .textos-hero h1{
+        font-size: 3.3rem;
+        width: 80%;
+    }
+    .hero-comida-principal{
+        width: 27rem;
+    }
+}
+@media (max-width:1600px) {
+    .textos-hero h1{
+        font-size: 3.5rem;
+        width: 100%;
+    }
+    .contenedor-opciones{
+        gap: 2rem;
+    }
+    .tarjeta img{
+        width: 12rem;
+        bottom: 14rem;
+        left: 2rem;
+    }
+}
+@media (max-width:1565px) {
+    .textos-hero p{
+        width: 65%;
+    }
+}
+@media (max-width:1444px) {
+
+    .textos-hero p{
+        width: 75%;
+    }
+    .textos-hero h1{
+        width: 90%;
+    }
+    .hero-comida-principal{
+        width: 25rem;
+        border: 1.8rem solid var(--verde-claro);
+    }
+}
+@media (max-width:1400px) {
+    .textos-hero p{
+        font-size: 1.1rem;
+        width: 75%;
+    }
+    .textos-hero h1{
+        font-size: 3.2rem;
+        width: 90%;
+    }
+    .btn-hero-izq{
+        padding: 1.4rem 2.6rem;
+    }
+    .btn-hero-der{
+        padding: 1.4rem 2rem;
+    }
+}
+@media (max-width:1360px) {
+    .textos-hero p{
+        font-size: 1.1rem;
+        width: 75%;
+    }
+    .textos-hero h1{
+        font-size: 3rem;
+        line-height: 4rem;
+        width: 90%;
+    }
+    .hero-comida-principal{
+        width: 24rem;
+        border: 1.8rem solid var(--verde-claro);
+    }
+    .btn-hero-izq{
+        padding: 1.4rem 2.6rem;
+    }
+    .btn-hero-der{
+        padding: 1.4rem 2rem;
+    }
+}
+@media (max-width:1300px) {
+    .textos-hero h1{
+        font-size: 2.7rem;
+        line-height: 4rem;
+        width: 85%;
+    }
+    
+    .btn-hero-izq{
+        padding: 1.3rem 2.4rem;
+    }
+    .btn-hero-der{
+        padding: 1.3rem 1.9rem;
+    }
+}
+
+@media (max-width:1150px) {
+    .hero-comida-principal{
+        width: 22rem;
+    }
+    .textos-hero h1{
+        font-size: 2.4rem;
+        line-height: 3.5rem;
+        width: 90%;
+    }
+    .textos-hero p{
+        font-size: 1rem;
+    }
+    .btn-hero-izq{
+        font-size: 0.9rem;
+        padding: 1.2rem 2.3rem;
+    }
+    .btn-hero-der{
+        font-size: 0.9rem;
+        padding: 1.2rem 1.7rem;
+    }
+}
+@media (max-width:1100px) {
+    .hero-comida-principal{
+        border: 1.3rem solid var(--verde-claro);
+    }
+    .textos-hero h1{
+        font-size: 2.3rem;
+        line-height: 3.2rem;
+        width: 95%;
+    }
+    .textos-hero p{
+        font-size: 1rem;
+    }
+}
+/* ====FIN COMPUTADOR LAPTOP===== */
+/* ==== TABLET===== */
+@media (max-width:1024px) {
+    .hero-comida-principal{
+        width: 18rem;
+        border: 0.7rem solid var(--verde-claro);
+    }
+    .textos-hero{
+        flex-basis: 60%;
+        gap: 1rem;
+    }
+}
+@media (max-width:993px) {
+    .textos-hero p{
+        width: 95%;
+    }
+    .textos-hero h1{
+        font-size: 1.8rem;
+        line-height: 2.7rem;
+    }
+
+}
+@media (max-width:900px) {
+    .hero-comida-principal{
+        width: 17rem;
+    }
+    .textos-hero p{
+        width: 100%;
+    }
+    .textos-hero h1{
+        font-size: 1.7rem;
+        width: 100%;
+    }
+    .btn-hero-izq{
+        padding: 1rem 2rem;
+        text-wrap: nowrap;
+    }
+    .btn-hero-der{
+        font-size: 0.9rem;
+        padding: 1rem 1.5rem;
+        text-wrap: nowrap;
+    }
+}
+@media (max-width:800px) {
+    .textos-hero p{
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    .textos-hero h1{
+        font-size: 1.5rem;
+        line-height: 2rem;
+        width: 100%;
+    }
+    .btn-hero-izq{
+        padding: 1rem 1.5rem;
+        text-wrap: nowrap;
+    }
+    .btn-hero-der{
+        font-size: 0.9rem;
+        padding: 1rem 1rem;
+        text-wrap: nowrap;
+    }
+    .hero-comida-principal{
+        width: 15rem;
+        border: 0.6rem solid var(--verde-claro);
+    }
+    .btn-hero-pregunta{
+        font-size: 1rem;
+    }
+}
+/* ==== FIN TABLET===== */
+/* ====CELULAR==== */
+@media (max-width:768px) {
+    .hero{
+        background:none;
+    }
+    .textos-hero{
+        align-items: center;
+        justify-content: center;
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .btns-hero{
+        margin: 0 auto;
+    }
+    .hero-comida-principal{
+        display: none;
+    }
+    .btn-hero-pregunta{
+        display: none;
+    }
+    .textos-hero h1{
+        font-size: 2.4rem;
+        width: 100%;
+    }
+    .textos-hero p{
+        font-size: 1.1rem;
+        width: 100%;
+    }
+}
+@media (max-width:600px) {
+    .textos-hero h1{
+        font-size: 2.2rem;
+    }
+    .textos-hero p{
+        font-size: 0.9rem;
+    }
+    .swiper-wrapper-hero{
+        right: 1.3rem;
+    }
+}
+@media (max-width:550px) {
+    .swiper-wrapper{
+        right: 2.7rem;
+    }
+}
+@media (max-width:500px) {
+    .swiper-wrapper-hero{
+        padding-left: 7rem;
+    }
+    .textos-hero h1{
+        font-size: 2rem;
+    }
+    .textos-hero p{
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    .btn-hero-izq{
+        padding: 0.8rem 1rem;
+    }
+    .btn-hero-der{
+        font-size: 0.9rem;
+        padding: 0.8rem 0.8rem;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after{
+        font-size: 2rem;
+        position: relative;
+        top: 0.4rem;
+        left: 0.3rem;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        padding: 0.2rem 0.5rem;
+}
+}
+@media (max-width:480px) {
+    .swiper-wrapper-hero{
+        padding-left: 6rem;
+    }
+    .swiper-slide-hero{
+        margin-top: 2rem;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        margin-top: -5rem;  
+    } 
+}
+@media (max-width:450px) {
+    .swiper-wrapper-hero{
+        padding-left: 5.5rem;
+    }
+    
+}
+@media (max-width:400px) {
+    .swiper-slide-hero{
+        margin-top: 1rem;
+    }
+    .textos-hero p{
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    .btn-hero-izq{
+        padding: 0.6rem 0.7rem;
+    }
+    .btn-hero-der{
+        font-size: 0.9rem;
+        padding: 0.6rem 0.6rem;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        margin-top: -7rem;  
+        background-color: transparent;
+        margin-inline: -1rem ;
+    } 
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover{
+        color: #779e4c;
+    } 
+    .swiper-button-prev::after,
+    .swiper-button-next::after{
+        font-size: 1.8rem;
+    }
+}
+@media (max-width:360px) {
+    .swiper-slide-hero{
+        margin-top: 3rem;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        margin-top: -6rem;  
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after{
+        font-size: 1.2rem;
+        top: 0.7rem;
+        left: 0.5rem;
+    } 
+    .textos-hero h1{
+        font-size: 1.2rem;
+    }
+    .textos-hero p{
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    .btn-hero-izq{
+        padding: 0.6rem 0.7rem;
+    }
+    .btn-hero-der{
+        font-size: 0.9rem;
+        padding: 0.6rem 0.6rem;
+    }
+}
+@media (max-width:322px) {
+    .swiper-slide-hero{
+        margin-top: 4rem;
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        margin-top: -2rem;  
+        background-color: transparent;
+        margin-inline: -1rem ;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after{
+        font-size: 1.2rem;
+    } 
+    .textos-hero h1{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .textos-hero p{
+        font-size: 0.9rem;
+        width: 100%;
+    }
+    .btn-hero-izq{
+        padding: 0.6rem 0.7rem;
+        font-size: 0.7rem;
+    }
+    .btn-hero-der{
+        font-size: 0.7rem;
+        padding: 0.6rem 0.6rem;
+    }
+}
+/* FIN MEDIA QUERIES */

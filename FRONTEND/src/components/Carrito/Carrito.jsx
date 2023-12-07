@@ -134,6 +134,9 @@ const Carrito = ({ userGoogle }) => {
             {carrito.length === 0 ? (
               <div>
                 <h1 className='mensaje-carrito'>No hay productos en el carrito</h1>
+                <div className="realizar-compra">
+                  <a className="explorar" href="/comidas/all">Explorar más</a>
+                </div>
               </div>
             ) : (
               carrito.map((item) => (

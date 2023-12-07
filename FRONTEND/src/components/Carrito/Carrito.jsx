@@ -9,9 +9,13 @@ const Carrito = ({ userGoogle }) => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
   const navegar = useNavigate()
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     axios.get('/compras')
       .then((response) => {
+        const delay = setTimeout(() => {
+          setLoading(false); // Actualiza el estado de carga después del tiempo de espera
+        }, 1000);
         setCarrito(response.data.carrito);
 
         const totalPrice = response.data.carrito.reduce((acc, item) => (
@@ -20,7 +24,9 @@ const Carrito = ({ userGoogle }) => {
           ), 0)
         ), 0);
         setTotal(totalPrice);
+        return () => clearTimeout(delay);
       })
+      
       .catch((error) => {
         console.log(error);
       });
@@ -118,49 +124,54 @@ const Carrito = ({ userGoogle }) => {
     .catch((error) => console.log(error))
   }
   return (
-    <>
+    <div>
       <HeaderShop userGoogle={userGoogle} />
       <section className='section-carrito'>
-        {carrito.length === 0 ? (
-          <div>
-            <h1 className='mensaje-carrito'>No hay productos en el carrito</h1>
-          </div>
+        {loading ? (
+          <div className="spinner"></div>
         ) : (
-          carrito.map((item) => (
-            <div key={item._id}>
-              {item.items.map((producto) => {
-                const { nombre, _id, imagen, precio, cantidad } = producto;
-                return (
-                  <div className="carrito-productos" key={_id}>
-                    <img src={imagen} alt={nombre} width={"100px"} />
-                    <button className="comprar-ahora agregar" type="submit"onClick={()=>restarProducto(_id)}>-</button>
-                    <p className="product-quantity">{cantidad}</p>
-                    <button className="comprar-ahora agregar" onClick={()=>sumarProducto(_id)}>+</button>
-                    <p>$ {precio}</p>
-                    <button className='eliminar'onClick={()=>eliminarProducto(_id)}>Eliminar</button>
-                  </div>
-                );
-              })}
-            </div>
-          ))
-        )}
-        {carrito.length !== 0 && (
-          <div className="realizar-compra">
-            <div className="comprar-carrito">
-              <div className='comprar'>
-                <p>Total:${total}</p>
-                <button className="compra" onClick={()=> comprarProducto()}>Comprar</button>
-              </div>
+          <div>
+            {carrito.length === 0 ? (
               <div>
-                <a className="explorar" href="/comidas/all">Explorar más</a>
+                <h1 className='mensaje-carrito'>No hay productos en el carrito</h1>
               </div>
-            </div>
+            ) : (
+              carrito.map((item) => (
+                <div key={item._id}>
+                  {item.items.map((producto) => {
+                    const { nombre, _id, imagen, precio, cantidad } = producto;
+                    return (
+                      <div className="carrito-productos" key={_id}>
+                        <img src={imagen} alt={nombre} width={"100px"} />
+                        <button className="comprar-ahora agregar" type="submit" onClick={() => restarProducto(_id)}>-</button>
+                        <p className="product-quantity">{cantidad}</p>
+                        <button className="comprar-ahora agregar" onClick={() => sumarProducto(_id)}>+</button>
+                        <p>$ {precio}</p>
+                        <button className='eliminar' onClick={() => eliminarProducto(_id)}>Eliminar</button>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))
+            )}
+            {carrito.length !== 0 && (
+              <div className="realizar-compra">
+                <div className="comprar-carrito">
+                  <div className='comprar'>
+                    <p>Total:${total}</p>
+                    <button className="compra" onClick={() => comprarProducto()}>Comprar</button>
+                  </div>
+                  <div>
+                    <a className="explorar" href="/comidas/all">Explorar más</a>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </section>
       <Footer />
-    </>
+    </div>
   );
-};
-
+}
 export { Carrito };

@@ -19,7 +19,6 @@ const Dulces = ({userGoogle}) => {
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera
       }, 1000);
-      
       setDulces(response.data.comidas);
       return () => clearTimeout(delay);
     })

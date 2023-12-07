@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { mirarProducto } from '../../../Funciones/mirarProducto';
 import 'aos/dist/aos.css'
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';
-const RecetasHabitual = () => {
+
+const RecetasHabitual = ({userGoogle}) => {
   const navegar = useNavigate()
   const [menuHabitual,setMenuHabitual] = useState([])
   useEffect(()=>{AOS.init()},[])
@@ -40,8 +41,11 @@ const RecetasHabitual = () => {
           </div>
           <div className="opciones-comprar-habitual">
                 <p>${precio}</p>
-                <button className='comprar-ahora' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
-              </div>
+                {userGoogle ? (
+                      <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                  ) : (
+                    <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
+                  )}              </div>
           </div>
           
         )

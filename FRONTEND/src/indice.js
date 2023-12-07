@@ -51,7 +51,6 @@ export { Producto } from './components/Producto/Producto.jsx'
 export { Registrarme } from './components/Sign up - Sign in/Registrarme.jsx'
 export { ImagenRegistrarme } from './components/Sign up - Sign in/Imagen-registrarme.jsx'
 export { Google } from './components/Sign up - Sign in/Google.jsx'
-
 /* SHOP */
 /* HEADER-SHOP */
 export { HeaderShop } from './components/Header-Shop/HeaderShop.jsx'

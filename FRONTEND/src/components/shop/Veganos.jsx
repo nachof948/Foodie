@@ -52,7 +52,11 @@ const Veganos = ({userGoogle}) => {
                   </div>
                   <div className="opciones-comprar">
                         <p>${precio}</p>
-                        <button className='comprar-ahora' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                        {userGoogle ? (
+                          <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                        ) : (
+                          <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
+                        )}
                       </div>
                   </div> 
                 )

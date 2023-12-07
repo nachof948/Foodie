@@ -5,7 +5,7 @@ import { mirarProducto } from '../../../Funciones/mirarProducto';
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';
 import './Hojas de estilo/Opciones.css'
 
-const Opciones = () => {
+const Opciones = ({userGoogle}) => {
   const [opciones, setOpciones] = useState([])
   const navegar = useNavigate()
   useEffect(() => {
@@ -35,7 +35,11 @@ const Opciones = () => {
             </div>
             <div className="opciones-comprar">
                   <p>${precio}</p>
-                  <button className='comprar-ahora' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                  {userGoogle ? (
+                      <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                  ) : (
+                    <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
+                  )}
                 </div>
             </div> 
           )

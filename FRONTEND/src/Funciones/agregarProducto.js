@@ -10,4 +10,4 @@ const agregarAlCarrito = (productoId, navegar) => {
         console.log(error);
       });
   };
-export{agregarAlCarrito}
+export{ agregarAlCarrito }

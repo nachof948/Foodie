@@ -30,7 +30,7 @@
     gap: 10.4rem;
     flex-basis: 65%;
 }
-.registro-google a:hover{
+.registro-google a{
     text-decoration: underline;
 }
 .registro-google h1{
@@ -58,3 +58,70 @@
 .google-enlace:hover.google i{
     color: #6AAAFB;
 }
+/*==== FIN SIGN-UP - LOG-IN====== */
+/* SECTOR MEDIA-QUERIES */
+@media (max-width:1350px) {
+    .imagen-registro h1{
+        font-size: 3.5rem;
+    }
+    .imagen-registro img{
+        width: 23rem;
+        border: 0.6rem solid rgb(131,182,77);
+    }
+    .registro-google h1{
+        font-size: 3.5rem;
+    }
+    .registro-google{
+        gap: 9.5rem;
+    }
+}
+@media (max-width:1350px) {
+    .imagen-registro h1{
+        font-size: 3.5rem;
+    }
+    .imagen-registro img{
+        width: 21rem;
+        border: 0.6rem solid rgb(131,182,77);
+    }
+    .registro-google h1{
+        font-size: 3.5rem;
+    }
+}
+@media (max-width:1350px) {
+    .imagen-registro h1{
+        font-size: 3.5rem;
+    }
+    .imagen-registro img{
+        width: 18rem;
+        border: 0.6rem solid rgb(131,182,77);
+    }
+    .registro-google h1{
+        font-size: 3.5rem;
+        margin-top: 2rem;
+    }
+    .registro-google{
+        gap: 8rem;
+    }
+}
+@media (max-width:950px) {
+    .main-registro{
+        flex-direction: column;
+        align-items: center;
+    }
+    .imagen-registro img{
+        display: none;
+    }
+    .imagen-registro{
+        flex-basis: 0%;
+        width: 100vw;
+        padding: 0.5rem;
+        background-color: rgb(131,182,77);
+    }
+}
+@media (max-width:350px) {
+    .google-enlace{
+        padding: 1rem 1.3rem;
+        font-size: 2.2rem;  
+    }
+}
+/* FIN SECTOR MEDIA-QUERIES */

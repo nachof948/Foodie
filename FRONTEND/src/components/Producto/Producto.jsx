@@ -13,7 +13,7 @@ const Producto = ({userGoogle}) => {
   const [rating, setRating] = useState('')
   const [vendidos, setVendidos] = useState('')
   const [precio, setPrecio] = useState('')
-  const [_id, set_Id] = useState('')
+  const [productoId, setProductoId] = useState('')
   const navegar = useNavigate()
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +33,7 @@ const Producto = ({userGoogle}) => {
         setRating(datos.rating);
         setVendidos(datos.vendidos);
         setPrecio(datos.precio);
-        set_Id(datos._id);
+        setProductoId(datos._id);
   
         return () => clearTimeout(delay);
       } catch (error) {
@@ -78,7 +78,11 @@ const Producto = ({userGoogle}) => {
                   </div>
                   <p className='precio-producto'>${precio}</p>
                   <p className='descripcion-extensa-producto'>{descripcionExtensa}</p>
-                  <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
+                  {userGoogle ? (
+                      <button className='comprar-producto' onClick={()=>{agregarAlCarrito(productoId, navegar)}}>Comprar Ahora</button>
+                  ) : (
+                    <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
+                  )}
                 </div>
               </section>
               )

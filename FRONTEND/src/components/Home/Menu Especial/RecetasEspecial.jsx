@@ -6,7 +6,7 @@ import { mirarProducto } from '../../../Funciones/mirarProducto';
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';
 import 'aos/dist/aos.css'
 
-const RecetasEspecial = () => {
+const RecetasEspecial = ({userGoogle}) => {
   const navegar = useNavigate()
 
 	const [menuEspecial, setMenuEspecial] = useState([])
@@ -40,7 +40,11 @@ const RecetasEspecial = () => {
                 <p>${precio}</p>
               </div>
           </div>
+          {userGoogle ? (
             <button className='comprar-ahora bolsa' onClick={()=>{agregarAlCarrito(_id, navegar)}}><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></button>
+            ) : (
+              <a className='comprar-ahora bolsa' href='/auth/registrarse'><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></a>
+            )}
           </div>
           
         )

@@ -17,7 +17,7 @@ const Home = ({ userGoogle }) => {
     <>
       {loading ? (
         <div className='contenedor-spinner-home'>
-            <h1>FOODIED</h1>
+            <h1 style={{fontSize:"4rem", marginBottom:"1rem"}}>FOODIED</h1>
             <div className="spinner"></div>
         </div>
         

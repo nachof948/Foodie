@@ -118,8 +118,8 @@
     --first-block-clr:rgb(132,183,78);
     --second-block-clr: rgb(132,183,78);
     --clr: #111;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     position: relative;
 }
 

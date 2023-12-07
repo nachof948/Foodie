@@ -51,9 +51,7 @@
     font-size: 1.1rem;
     color: rgb(139, 143, 144);
 }
-.precio-producto{
-    margin-bottom: 2rem;
-}
+
 .precio-producto{
     font-weight: 700;
     font-size: 2.3rem;
@@ -135,5 +133,95 @@
     }
     75% {
     transform: translateY(-100%);
+    }
+}
+
+/* --------RESPONSIVE---------------*/
+
+@media (max-width:1400px) {
+    .imagen-producto img{
+        width: 32rem;
+    }
+    .titulo-producto{
+        font-size: 2.5rem;
+    }
+    .producto-textos {
+        gap: 1rem;
+    }
+    .comprar-producto{
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+    }
+}
+@media (max-width:1200px) {
+    .imagen-producto img{
+        width: 28rem;
+    }
+    .titulo-producto{
+        font-size: 2rem;
+    }
+    .precio-producto{
+        font-size: 1.8rem;
+    }
+    .descripcion-extensa-producto{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width:1024px) {
+    .section-producto {
+        flex-direction: column;
+        gap: 4rem;
+        padding-top: 10rem;
+    }
+    .producto-textos {
+        align-items: center;
+        width: 80%;
+        text-align: center;
+    }
+}
+@media (max-width:500px) {
+    .imagen-producto img{
+        width: 23rem;
+    }
+    .producto-textos {
+        width: 90%;
+    }
+    .precio-producto{
+        font-size: 1.5rem;
+    }
+    .descripcion-extensa-producto{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width:400px) {
+    .imagen-producto img{
+        width: 20rem;
+    }
+    .titulo-producto{
+        font-size: 1.7rem;
+    }
+    .estrella-producto{
+        width: 1rem;
+        height: 1rem;
+    }
+    .ventas-rating p{
+        font-size: 0.9rem;
+    }
+    .ventas-rating span{
+        font-size: 1rem;
+    }
+    .producto-textos {
+        width: 90%;
+    }
+    .precio-producto{
+        font-size: 1.5rem;
+    }
+    .descripcion-extensa-producto{
+        font-size: 0.8rem;
+    }
+}
+@media (max-width:350px) {
+    .imagen-producto img{
+        width: 18rem;
     }
 }

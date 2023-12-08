@@ -9,7 +9,7 @@ const Opciones = ({userGoogle}) => {
   const [opciones, setOpciones] = useState([])
   const navegar = useNavigate()
   useEffect(() => {
-    axios.get('/home')
+    axios.get('https://restaurante-foodied.onrender.com/home')
     .then((response) =>{
       setOpciones(response.data.comidas)
     })

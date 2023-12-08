@@ -11,7 +11,7 @@ const Carrito = ({ userGoogle }) => {
   const navegar = useNavigate()
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    axios.get('/compras')
+    axios.get('https://restaurante-foodied.onrender.com/compras')
       .then((response) => {
         const delay = setTimeout(() => {
           setLoading(false); // Actualiza el estado de carga después del tiempo de espera
@@ -34,7 +34,7 @@ const Carrito = ({ userGoogle }) => {
   }, []);
   const restarProducto = async (productoId) => {
     try {
-      await axios.post('/compras/restar', { id: productoId });
+      await axios.post('https://restaurante-foodied.onrender.com/compras/restar', { id: productoId });
   
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
@@ -68,7 +68,7 @@ const Carrito = ({ userGoogle }) => {
 
   const sumarProducto = async (productoId) => {
     try {
-      await axios.post('/compras/sumar', { id: productoId });
+      await axios.post('https://restaurante-foodied.onrender.com/compras/sumar', { id: productoId });
   
       const updatedCarrito = carrito.map((item) => {
         const updatedItems = item.items.map((producto) => {
@@ -93,7 +93,7 @@ const Carrito = ({ userGoogle }) => {
   };
     
   const eliminarProducto = (id) => {
-    axios.delete(`/compras/eliminar/${id}`)
+    axios.delete(`https://restaurante-foodied.onrender.com/compras/eliminar/${id}`)
       .then(() => {
         const updatedCarrito = carrito.map((item) => {
           const updatedItems = item.items.filter((producto) => producto._id !== id);
@@ -117,7 +117,7 @@ const Carrito = ({ userGoogle }) => {
       });
   };
   const comprarProducto = ()=>{
-    axios.post('/compra-realizada')
+    axios.post('https://restaurante-foodied.onrender.com/compra-realizada')
     .then(()=>{
       navegar('/compra-realizada')
     })

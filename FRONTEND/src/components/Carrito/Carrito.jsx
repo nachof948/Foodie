@@ -165,7 +165,7 @@ const Carrito = ({ userGoogle }) => {
                     <button className="compra" onClick={() => comprarProducto()}>Comprar</button>
                   </div>
                   <div>
-                    <Link className="explorar" to={"/comidas/all"}>Explorar más</Link>
+                    <Link className="explorar" to={"https://restaurant-foodied.onrender.com/comidas/all"}>Explorar más</Link>
                   </div>
                 </div>
               </div>

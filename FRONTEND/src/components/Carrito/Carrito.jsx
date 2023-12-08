@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HeaderShop, Footer } from '../../indice';
 import axios from 'axios';
 import './Hoja de estilos/Carrito.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Carrito = ({ userGoogle }) => {
@@ -165,7 +165,7 @@ const Carrito = ({ userGoogle }) => {
                     <button className="compra" onClick={() => comprarProducto()}>Comprar</button>
                   </div>
                   <div>
-                    <a className="explorar" href="/comidas/all">Explorar más</a>
+                    <Link className="explorar" to={"/comidas/all"}>Explorar más</Link>
                   </div>
                 </div>
               </div>

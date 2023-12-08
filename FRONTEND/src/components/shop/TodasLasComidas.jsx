@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import { Footer, HeaderShop, Shop } from '../../indice';
 import './Hoja de estilos/Shop.css'
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import { mirarProducto } from '../../Funciones/mirarProducto';
 import AOS from 'aos'
@@ -58,7 +58,8 @@ const TodasLasComidas = ({userGoogle}) => {
                         {userGoogle ? (
                           <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
                         ) : (
-                          <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
+                          <Link className='comprar-producto' to={'/auth/registrarse'}>Comprar Ahora</Link>
+
                         )}
                       </div>
                   </div> 

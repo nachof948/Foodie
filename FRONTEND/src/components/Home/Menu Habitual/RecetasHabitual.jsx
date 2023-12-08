@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AOS from 'aos'
-import { useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { mirarProducto } from '../../../Funciones/mirarProducto';
 import 'aos/dist/aos.css'
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';

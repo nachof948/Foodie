@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ExplorarHero = () => {
   return(
     <>
-      <a href="/comidas/all" className='btn-hero-der'>Explorar Mas <span><i className="bi bi-arrow-right-circle"></i></span></a>
+      <Link to={"/comidas/all"} className='btn-hero-der'>Explorar Mas <span><i className="bi bi-arrow-right-circle"></i></span></Link>
     </>
   )
 }

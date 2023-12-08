@@ -12,7 +12,7 @@ function App() {
         const response = await axios.get("https://restaurante-foodied.onrender.com/auth/exito");
         
         if (response.status === 200) {
-          if (response.data && response.data.user) {
+          if (response.data.user) {
             setUserGoogle(response.data.user); // Usuario autenticado
           } else {
             setUserGoogle(null); // Usuario no autenticado

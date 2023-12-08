@@ -8,7 +8,7 @@ const Registrarse = ({ userGoogle }) => {
   }
 
   const cerrarSesion = ()=>{
-    window.open('http://localhost:4500/auth/logout','_self')
+    window.open('https://restaurant-foodied.onrender.com/auth/logout','_self')
   }
 
   return (

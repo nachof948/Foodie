@@ -13,7 +13,7 @@ const Pastas = ({userGoogle}) => {
 
   const [Pastas, setPastas] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/Pastas')
+    axios.get('https://restaurante-foodied.onrender.com/comidas/Pastas')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

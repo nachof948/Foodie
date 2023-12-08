@@ -14,7 +14,7 @@ const Dulces = ({userGoogle}) => {
   const [Dulces, setDulces] = useState([])
   
   useEffect(()=>{
-    axios.get('/comidas/Dulces')
+    axios.get('https://restaurante-foodied.onrender.com/comidas/Dulces')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

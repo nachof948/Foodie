@@ -13,7 +13,7 @@ const Hamburguesas = ({userGoogle}) => {
 
   const [Hamburguesas, setHamburguesas] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/Hamburguesas')
+    axios.get('https://restaurante-foodied.onrender.com/comidas/Hamburguesas')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

@@ -14,7 +14,7 @@ const Sushi = ({userGoogle}) => {
 
   const [Sushi, setSushi] = useState([])
   useEffect(()=>{
-    axios.get('/comidas/Sushi')
+    axios.get('https://restaurante-foodied.onrender.com/comidas/Sushi')
     .then((response)=>{
       const delay = setTimeout(() => {
         setLoading(false); // Actualiza el estado de carga después del tiempo de espera

@@ -20,7 +20,7 @@ const Producto = ({userGoogle}) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(`/producto/${params._id}`);
+        const response = await axios.post(`https://restaurante-foodied.onrender.com/producto/${params._id}`);
         const datos = response.data;
   
         const delay = setTimeout(() => {

@@ -13,7 +13,7 @@ const RecetasEspecial = ({userGoogle}) => {
 
   useEffect(()=>{AOS.init()},[])
 	useEffect(()=>{
-		axios.get('/home')
+		axios.get('https://restaurante-foodied.onrender.com/home')
 		.then((response=>{
       setMenuEspecial(response.data.comidas)
 		}))

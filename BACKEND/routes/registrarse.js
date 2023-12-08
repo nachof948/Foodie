@@ -24,7 +24,7 @@ router.get('/logout', (req, res) => {
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
-router.get('/google/redirect', passport.authenticate('google', {
+router.get('/google/callback', passport.authenticate('google', {
     successRedirect: 'https://restaurant-foodied.onrender.com/comidas/all',
     failureRedirect: '/error' // Opcional: Redirección en caso de fallo en la autenticación
 }));

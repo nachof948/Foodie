@@ -44,8 +44,9 @@ const RecetasHabitual = ({userGoogle}) => {
                 {userGoogle ? (
                       <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
                   ) : (
-                    <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
-                  )}              </div>
+                    <Link className='comprar-producto' to={'/auth/registrarse'}>Comprar Ahora</Link>
+                  )}             
+                  </div>
           </div>
           
         )

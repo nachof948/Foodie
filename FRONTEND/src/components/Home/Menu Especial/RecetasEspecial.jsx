@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AOS from 'aos'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { mirarProducto } from '../../../Funciones/mirarProducto';
 import { agregarAlCarrito } from '../../../Funciones/agregarProducto';
 import 'aos/dist/aos.css'
@@ -43,7 +43,7 @@ const RecetasEspecial = ({userGoogle}) => {
           {userGoogle ? (
             <button className='comprar-ahora bolsa' onClick={()=>{agregarAlCarrito(_id, navegar)}}><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></button>
             ) : (
-              <a className='comprar-ahora bolsa' href='/auth/registrarse'><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></a>
+              <Link className='comprar-ahora bolsa' to={'/auth/registrarse'}><img src="/Imagenes/icons8-bolsa-de-compras-45.png" alt="Bolsa" /></Link>
             )}
           </div>
           

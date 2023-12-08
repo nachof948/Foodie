@@ -35,11 +35,11 @@ function App() {
         } else {
           throw new Error('Error en la autentificación');
         } */
-
     };
   
     obtenerUsuario();
   }, []);
+  console.log(userGoogle)
   return (
   <div className="App">
       <Routes>

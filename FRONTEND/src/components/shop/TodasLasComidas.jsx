@@ -59,7 +59,6 @@ const TodasLasComidas = ({userGoogle}) => {
                           <button className='comprar-producto' onClick={()=>{agregarAlCarrito(_id, navegar)}}>Comprar Ahora</button>
                         ) : (
                           <Link className='comprar-producto' to={'/auth/registrarse'}>Comprar Ahora</Link>
-
                         )}
                       </div>
                   </div> 

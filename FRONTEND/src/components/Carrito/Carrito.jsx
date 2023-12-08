@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { HeaderShop, Footer } from '../../indice';
 import axios from 'axios';
 import './Hoja de estilos/Carrito.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 
 const Carrito = ({ userGoogle }) => {

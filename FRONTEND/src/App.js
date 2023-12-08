@@ -2,29 +2,14 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { Route, Routes} from 'react-router-dom'
 import { TodasLasComidas, Carnes, Ensaladas, Sushi, Pastas, Pizzas, Sopas, Dulces, Veganos, Hamburguesas, Home, Producto, Registrarme, Carrito, CompraRealizada} from './indice';
+import axios from 'axios';
 function App() {
   const [userGoogle, setUserGoogle] = useState(null)
   
   useEffect(() => {
-    const obtenerUsuario = () => {
-      
-        fetch('https://restaurante-foodied.onrender.com/auth/exito',{
-          method: "GET",
-          credentials:"include",
-          headers:{
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Credentials": true
-          },
-          }).then((response) =>{
-            if (response.status === 200) return response.json()
-            throw new Error("La autentificacion fallo")
-          }).then(resObject =>{
-            setUserGoogle(resObject.user)
-          }).catch(err =>{
-            console.log(err)
-          })
-        /* const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito');
+    const obtenerUsuario = async () => {
+      try {
+        const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito');
         
         if (response.status === 200) {
           if (response.data && response.data.user) {
@@ -34,12 +19,14 @@ function App() {
           }
         } else {
           throw new Error('Error en la autentificación');
-        } */
+        }
+      } catch (err) {
+        console.log(err);
+      }
     };
   
     obtenerUsuario();
   }, []);
-  console.log(userGoogle)
   return (
   <div className="App">
       <Routes>

@@ -108,7 +108,11 @@
     color: var(--verde--oscuro);
     cursor: pointer;
 }
-
+.contenedor-spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* MEDIA QUERIES */
 /* ===COMPUTADORA O LAPTOP=== */
 @media (max-width:1750px) {

@@ -355,12 +355,12 @@ nav a:hover{
         justify-content: space-between;
         margin: 0 auto;
     }
-    nav a{
-        font-size: 0.8rem;
+    .menu-responsivo{
+        margin-right: 1.5rem;
     }
     .registrarse{
-        padding: 0.2rem;
-        font-size: 0.8rem;
+        padding: 0.4rem;
+        font-size: 1rem;
     }
     .avatar{
         width: 1.5rem;
@@ -372,6 +372,12 @@ nav a:hover{
     .cerrar-sesion-responsive button{
         padding: 0.4rem 1.4rem;
         font-size: 0.8rem;
+    }
+}
+@media (max-width:380px) {
+    nav a{
+        font-size: 1.1rem;
+        text-wrap: nowrap;
     }
 }
 @media (max-width:330px) {

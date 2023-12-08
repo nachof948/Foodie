@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios'
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { HeaderShop, Footer } from '../../indice'
 import { agregarAlCarrito } from '../../Funciones/agregarProducto';
 import './Hoja de estilos/Producto.css'
@@ -81,7 +81,7 @@ const Producto = ({userGoogle}) => {
                   {userGoogle ? (
                       <button className='comprar-producto' onClick={()=>{agregarAlCarrito(productoId, navegar)}}>Comprar Ahora</button>
                   ) : (
-                    <a className='comprar-producto' href='/auth/registrarse'>Comprar Ahora</a>
+                    <Link className='comprar-producto' to={'/auth/registrarse'}>Comprar Ahora</Link>
                   )}
                 </div>
               </section>

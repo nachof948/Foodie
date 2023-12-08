@@ -15,7 +15,7 @@ const Registrarse = ({ userGoogle }) => {
     <>
       {!userGoogle && (
         <div className='registrarse'>
-          <Link to={"/auth/registrarse"}>Registrarse</Link>
+          <Link to={"https://restaurant-foodied.onrender.com/auth/registrarse"}>Registrarse</Link>
         </div>
       )}
       {userGoogle && (

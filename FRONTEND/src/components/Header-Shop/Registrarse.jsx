@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const Registrarse = ({ userGoogle }) => {
   const cerrarSesion = ()=>{
-    window.open('http://localhost:4500/auth/logout','_self')
+    window.open('https://restaurante-foodied.onrender.com/auth/logout','_self')
   }
   return (
     <>

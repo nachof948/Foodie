@@ -18,14 +18,14 @@ router.get('/exito', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.logout()
-    res.redirect('http://localhost:3000/')
+    res.redirect('https://restaurant-foodied.onrender.com/')
 })
 
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
 router.get('/google/callback', passport.authenticate('google', {
-    successRedirect: 'http://localhost:3000/comidas/all',
+    successRedirect: 'https://restaurant-foodied.onrender.com/comidas/all',
     failureRedirect: '/error' // Opcional: Redirección en caso de fallo en la autenticación
 }));
 

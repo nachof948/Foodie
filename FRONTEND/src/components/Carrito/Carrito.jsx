@@ -135,7 +135,7 @@ const Carrito = ({ userGoogle }) => {
               <div>
                 <h1 className='mensaje-carrito'>No hay productos en el carrito</h1>
                 <div className="realizar-compra">
-                  <a className="explorar" href="/comidas/all">Explorar más</a>
+                <Link className="explorar" to={"https://restaurant-foodied.onrender.com/comidas/all"}>Explorar más</Link>
                 </div>
               </div>
             ) : (

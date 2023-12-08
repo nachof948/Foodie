@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await axios.get('https://restaurant-foodied.onrender.com/auth/exito');
+        const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito');
         
         if (response.status === 200) {
           if (response.data && response.data.user) {
@@ -45,7 +45,6 @@ function App() {
         <Route path='/auth/registrarse' element={<Registrarme />}></Route>
         <Route path='/compras' element={<Carrito userGoogle={userGoogle} />}></Route>
         <Route path='/compra-realizada' element={<CompraRealizada />}></Route>
-        
       </Routes>
   </div>
   );

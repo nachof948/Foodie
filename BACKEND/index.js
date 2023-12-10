@@ -17,7 +17,7 @@ const GooglePassport = require('./config/config')
 
 app.use(
     cors({
-    origin: ["https://restaurant-foodied.onrender.com"],
+    origin: "https://restaurant-foodied.onrender.com",
     methods: 'GET, POST, PUT, DELETE',
     credentials: true
     })

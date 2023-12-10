@@ -8,17 +8,23 @@ router.get('/error', (req, res) => {
 })
 
 router.get('/exito', (req, res) => {
-    res.json({message: 'el usuario es:'+ req.user})
     if(req.user){
         res.status(200).json({
             success: true,
-            message:"Exito al registrase",
-            user:{
+            message: "Exito al registrarse",
+            user: {
                 username: req.user.username,
-                image:req.user.image}
-        })
+                image: req.user.image
+            }
+        });
+    } else {
+        res.status(401).json({
+            success: false,
+            message: "No se encontró usuario registrado"
+        });
     }
-})
+});
+
 
 router.get('/logout', (req, res) => {
     req.logout()

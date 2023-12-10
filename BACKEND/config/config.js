@@ -12,7 +12,7 @@ passport.use(new GoogleStrategy({
         try{
             const usuarioRegistrado = await ClienteGoogle.findOne({googleId: profile.id})
             if(usuarioRegistrado){
-                console.log(usuarioRegistrado)
+                console.log('Este es el usuario:' + usuarioRegistrado)
                 done(null, usuarioRegistrado)
             } else{
                 const usuario = await new ClienteGoogle({

@@ -8,7 +8,7 @@ router.get('/error', (req, res) => {
 })
 
 router.get('/exito', (req, res) => {
-    console.log(req.user)
+    console.log('El usuario es:'+ req.user.username)
     if(req.user){
         res.status(200).json({
             success: true,

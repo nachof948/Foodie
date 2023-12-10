@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await axios.get("https://restaurant-foodied.onrender.com/auth/exito",{
+        const response = await axios.get("https://restaurante-foodied.onrender.com/auth/google/callback",{
           withCredentials: true
         });
         console.log('El usuario es:', response.data)

@@ -6,7 +6,9 @@ const passport = require('passport')
 router.get('/error', (req, res) => {
     res.status(401).json({message:"Error al registarse"})
 })
+
 router.get('/exito', (req, res) => {
+    console.log(req.user)
     if(req.user){
         res.status(200).json({
             success: true,

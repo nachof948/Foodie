@@ -11,7 +11,9 @@ router.get('/exito', (req, res) => {
         res.status(200).json({
             success: true,
             message:"Exito al registrase",
-            user:req.user,
+            user:{
+                username: req.user.username,
+                image:req.user.image}
         })
     }
 })

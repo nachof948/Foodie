@@ -17,11 +17,12 @@ router.get('/logout', (req, res) => {
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
-
 router.get('/google/callback', passport.authenticate('google', {
     successRedirect: 'https://restaurant-foodied.onrender.com/',
     failureRedirect: '/error' // Opcional: Redirección en caso de fallo en la autenticación
-  }), (req, res) => {
+}));
+
+router.get('/exito', (req, res) => {
     if (req.isAuthenticated()) {
       // Usuario autenticado, devuelve la respuesta deseada
       res.status(200).json({
@@ -40,34 +41,6 @@ router.get('/google/callback', passport.authenticate('google', {
       });
     }
   });
-  
-
-
-
-/* router.get('/google/callback', passport.authenticate('google', {
-    successRedirect: 'https://restaurant-foodied.onrender.com/',
-    failureRedirect: '/error' // Opcional: Redirección en caso de fallo en la autenticación
-})); */
-
-/* router.get('/exito', (req, res) => {
-    if (req.isAuthenticated()) {
-      // Usuario autenticado, devuelve la respuesta deseada
-      res.status(200).json({
-        success: true,
-        message: "Exito al registrarse",
-        user: {
-          username: req.user.username,
-          image: req.user.image
-        }
-      });
-    } else {
-      // No hay usuario autenticado, devuelve un mensaje de error
-      res.status(401).json({
-        success: false,
-        message: "No se encontró usuario registrado"
-      });
-    }
-  }); */
   
 
 module.exports = router

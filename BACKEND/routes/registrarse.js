@@ -25,7 +25,7 @@ router.get('/google/callback', passport.authenticate('google', {
 router.get('/exito', (req, res) => {
     if (req.isAuthenticated()) {
       // Usuario autenticado, devuelve la respuesta deseada
-      res.status(200).json({
+      res.status(200).send({
         success: true,
         message: "Esto esta funcionando",
         user: {

@@ -22,6 +22,12 @@ app.use(
     credentials: true
     })
 );
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://restaurant-foodied.onrender.com');
+    // Otros encabezados y métodos que deseas permitir pueden ser configurados aquí
+    next();
+  });
+  
 
 //Configuración del formulario
 app.use(express.json())

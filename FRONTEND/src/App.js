@@ -9,12 +9,12 @@ function App() {
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await axios.get(`https://restaurante-foodied.onrender.com/auth/exito`,{
+        const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito',{
           withCredentials: true
         });
         console.log('El usuario es:', response.data)
         if (response.status === 200) {
-          if (response.data === response.data.sucess) { 
+          if (response.data === response.data.success) { 
             setUserGoogle(response.data.user); // Usuario autenticado
           } else {
             setUserGoogle(null); // Usuario no autenticado
@@ -23,7 +23,7 @@ function App() {
           throw new Error('Error en la autentificación');
         }
       } catch (err) {
-        console.log(err);
+        console.log('Error al obtener el usuario', err);
       }
     };
   

@@ -10,7 +10,10 @@ function App() {
     const obtenerUsuario = async () => {
       try {
         const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito',{
-          withCredentials: true
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
         console.log('El usuario es:', response.data)
         if (response.status === 200) {

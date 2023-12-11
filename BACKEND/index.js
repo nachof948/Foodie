@@ -22,7 +22,13 @@ app.use(
     credentials: true
     })
 );
-
+/* RUTA */
+app.use('/',home)
+app.use('/comidas',shop)
+app.use('/', producto)
+app.use('/auth', registrarse)
+app.use('/compras', carrito)
+app.use('/', compra)
 //Configuración del formulario
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
@@ -47,13 +53,7 @@ app.use(passport.session({
 /* PUERTO */
 const PUERTO = process.env.PUERTO
 
-/* RUTA */
-app.use('/',home)
-app.use('/comidas',shop)
-app.use('/', producto)
-app.use('/auth', registrarse)
-app.use('/compras', carrito)
-app.use('/', compra)
+
 /* CONEXION A LA BASE DE DATOS */
 const iniciar = async ()=>{
     try{

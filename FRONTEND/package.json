@@ -1,7 +1,7 @@
 {
   "name": "cliente",
   "version": "0.1.0",
-  "proxy": "http://localhost:4500/",
+  "proxy": "https://restaurante-foodied.onrender.com/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

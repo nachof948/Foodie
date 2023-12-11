@@ -3,7 +3,7 @@ import React from 'react';
 const Google = () => {
   
   const googleAuth = ()=>{
-    window.open("/auth/google","_self")
+    window.open("https://restaurante-foodied.onrender.com/auth/google","_self")
   }
 
   return(

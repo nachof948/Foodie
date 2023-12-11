@@ -13,12 +13,8 @@ router.get('/exito', (req, res) => {
     res.status(200).send({
       success: true,
       message: "Esto esta funcionando",
-      user: {
-        username: req.user.username,
-        image: req.user.image,
-        _id: req.user._id,
-        googleId: req.user.googleId
-      }
+      user: req.user
+      
     });
   } else {
     // No hay usuario autenticado, devuelve un mensaje de error

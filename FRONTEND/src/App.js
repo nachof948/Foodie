@@ -15,7 +15,7 @@ function App() {
         console.log('El usuario es:', response.data)
         if (response.status === 200) {
           if (response.data === response.data.success) { 
-            setUserGoogle(true); // Usuario autenticado
+            setUserGoogle(response.data.user); // Usuario autenticado
           } else {
             setUserGoogle(null); // Usuario no autenticado
           }

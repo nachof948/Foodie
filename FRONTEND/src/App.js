@@ -8,22 +8,19 @@ function App() {
   
   useEffect(() => {
     const obtenerUsuario = async () => {
-      if (!userGoogle) {
-        obtenerUsuario();
-      }
       try {
-        const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito', {
+        const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito',{
           withCredentials: true,
           headers: {
             'Content-Type': 'application/json',
           },
         });
-  
+        console.log('El usuario es:', response.data)
         if (response.status === 200) {
-          if (response.data.success) {
-            setUserGoogle(response.data.user);
+          if (response.data === response.data.success) { 
+            setUserGoogle(response.data.user); // Usuario autenticado
           } else {
-            setUserGoogle(null);
+            setUserGoogle(null); // Usuario no autenticado
           }
         } else {
           throw new Error('Error en la autentificación');
@@ -34,8 +31,7 @@ function App() {
     };
   
     obtenerUsuario();
-  }, [userGoogle]);
-  
+  }, []);
   return (
   <div className="App">
       <Routes>

@@ -3,6 +3,15 @@ const ClienteGoogle = require('../models/Usuario-Google')
 const passport = require('passport')
 require('dotenv').config()
 
+
+passport.serializeUser((usuario, done)=>{
+    done(null, usuario)
+})
+passport.deserializeUser((usuario, done)=>{
+    done(null, usuario)
+})
+
+
 passport.use(new GoogleStrategy({
     clientID:process.env.GOOGLE_CLIENT_ID,
     clientSecret:process.env.GOOGLE_CLIENT_SECRET,
@@ -28,10 +37,3 @@ passport.use(new GoogleStrategy({
         }
     }
 ))  
-
-passport.serializeUser((usuario, done)=>{
-    done(null, usuario)
-})
-passport.deserializeUser((usuario, done)=>{
-    done(null, usuario)
-})

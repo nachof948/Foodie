@@ -14,6 +14,7 @@ router.get('/exito', (req, res) => {
       success: true,
       message: "Esto esta funcionando",
       user: req.user
+      
     });
   } else {
     // No hay usuario autenticado, devuelve un mensaje de error
@@ -34,7 +35,7 @@ router.get('/logout', (req, res) => {
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
 }));
-router.get('/google/redirect', passport.authenticate('google', {
+router.get('/google/callback', passport.authenticate('google', {
     successRedirect: 'https://restaurant-foodied.onrender.com/',
     failureRedirect: '/error' // Opcional: Redirección en caso de fallo en la autenticación
 }));

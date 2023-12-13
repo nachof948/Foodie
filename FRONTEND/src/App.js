@@ -12,8 +12,7 @@ function App() {
         const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito',{
           withCredentials: true
         })
-        const { username , image} = response.data.user
-        console.log('El usuario es:', username, image)
+        console.log('El usuario es:', response.data.user)
         if (response.status === 200) {
           if (response.data.success) { 
             setUserGoogle(response.data.user); // Usuario autenticado

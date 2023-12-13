@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import { Link } from 'react-router-dom'
 const Registrarse = ({ userGoogle }) => {
   const [logout, setLogout] = useState(false)
   
@@ -15,7 +15,7 @@ const Registrarse = ({ userGoogle }) => {
     <>
       {!userGoogle && (
         <div className='registrarse'>
-          <a href={"https://restaurant-foodied.onrender.com/auth/registrarse"}>Registrarse</a>
+          <Link to={"https://restaurant-foodied.onrender.com/auth/registrarse"}>Registrarse</Link>
         </div>
       )}
       {userGoogle && (

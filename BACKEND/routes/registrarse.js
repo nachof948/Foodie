@@ -8,21 +8,7 @@ router.get('/error', (req, res) => {
 })
 
 router.get('/exito', (req, res) => {
-  if (req.isAuthenticated()) {
-    // Usuario autenticado, devuelve la respuesta deseada
-    res.status(200).send({
-      success: true,
-      message: "Esto esta funcionando",
-      user: req.user
-      
-    });
-  } else {
-    // No hay usuario autenticado, devuelve un mensaje de error
-    res.status(401).json({
-      success: false,
-      message: "No se encontró usuario registrado"
-    });
-  }
+  res.send(req.user)
 });
 
 

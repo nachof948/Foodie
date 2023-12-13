@@ -9,19 +9,13 @@ function App() {
   useEffect(() => {
     const obtenerUsuario = async () => {
       try {
-        const response = await fetch('https://restaurante-foodied.onrender.com/auth/exito', {
-          method: 'GET',
-          credentials: 'include', // Para enviar y recibir cookies
-          headers: {
-            'Content-Type': 'application/json', // Tipo de contenido esperado
-          },
-        });
-        const data = await response.json();
-        console.log('El usuario es:', data.user);
-  
+        const response = await axios.get('https://restaurante-foodied.onrender.com/auth/exito',{
+          withCredentials: true
+        })
+        console.log('El usuario es:', response.data.user)
         if (response.status === 200) {
-          if (data.success) {
-            setUserGoogle(data.user); // Usuario autenticado
+          if (response.data.success) { 
+            setUserGoogle(response.data.user); // Usuario autenticado
           } else {
             setUserGoogle(null); // Usuario no autenticado
           }
@@ -32,10 +26,8 @@ function App() {
         console.log('Error al obtener el usuario', err);
       }
     };
-  
     obtenerUsuario();
   }, []);
-  
   return (
   <div className="App">
       <Routes>

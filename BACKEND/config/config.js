@@ -16,6 +16,7 @@ passport.use(new GoogleStrategy({
     clientID:process.env.GOOGLE_CLIENT_ID,
     clientSecret:process.env.GOOGLE_CLIENT_SECRET,
     callbackURL:"https://restaurante-foodied.onrender.com/auth/google/callback",
+    key:process.env.API_KEY
     },
     async (accessToken, refreshToken, profile, done) =>{
         try{

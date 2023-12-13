@@ -13,8 +13,8 @@ passport.deserializeUser((usuario, done)=>{
 
 
 passport.use(new GoogleStrategy({
-    clientID:'765095277311-hnbmb73bhfrconmjsjtf3g91pq178nq4.apps.googleusercontent.com',
-    clientSecret:'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',
+    clientID:process.env.GOOGLE_CLIENT_ID,
+    clientSecret:process.env.GOOGLE_CLIENT_SECRET,
     callbackURL:"https://restaurante-foodied.onrender.com/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) =>{

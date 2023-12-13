@@ -18,7 +18,7 @@ function App() {
             const {username, image} = response.data.user
             console.log(username)
             console.log(image)
-            setUserGoogle(username, image); // Usuario autenticado
+            setUserGoogle({username, image}); // Usuario autenticado
           } else {
             setUserGoogle(null); // Usuario no autenticado
           }

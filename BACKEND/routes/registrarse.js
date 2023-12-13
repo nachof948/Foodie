@@ -14,7 +14,6 @@ router.get('/exito', (req, res) => {
       success: true,
       message: "Esto esta funcionando",
       user: req.user
-      
     });
   } else {
     // No hay usuario autenticado, devuelve un mensaje de error

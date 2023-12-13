@@ -27,7 +27,8 @@ passport.use(new GoogleStrategy({
                 const usuario = await new ClienteGoogle({
                     googleId: profile.id,
                     username: profile.displayName,
-                    image:profile.photos[0].value
+                    image:profile.photos[0].value,
+                    token: accessToken
                 }).save()
                 console.log(usuario)
                 done(null, usuario)

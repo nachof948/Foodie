@@ -26,14 +26,8 @@ app.use(
 
 //Configuración del formulario
 app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:true}))
 
-
-/* UTILIZAR COOKIES */
-app.use(cookieSession({
-    keys:[process.env.KEY_COOKIE],
-    maxAge:24 * 60 * 60 * 100 /* Un dia */
-}))
 
 /* INICIALIZACION DE PASSPORT */
 app.use(passport.initialize())
@@ -41,6 +35,14 @@ app.use(passport.session({
     secret:'secreto',
     resave:false,
     saveUninitialized:true
+}))
+
+
+
+/* UTILIZAR COOKIES */
+app.use(cookieSession({
+    keys:[process.env.KEY_COOKIE],
+    maxAge:24 * 60 * 60 * 100 /* Un dia */
 }))
 
 

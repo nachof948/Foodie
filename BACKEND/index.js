@@ -15,12 +15,13 @@ const GooglePassport = require('./config/config')
 
 
 
-app.use(
-    cors({
-    origin: ["https://restaurant-foodied.onrender.com", "http://localhost:3000"],
-    credentials: true
-    })
-);
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://restaurant-foodied.onrender.com');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 
 
 //Configuración del formulario

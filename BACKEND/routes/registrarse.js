@@ -8,7 +8,12 @@ router.get('/error', (req, res) => {
 })
 
 router.get('/exito', (req, res) => {
-  res.send(req.user)
+  if (req.isAuthenticated()) {
+    // Usuario autenticado, devuelve la respuesta deseada
+    res.status(200).send({
+      user: req.user
+    });
+  }
 });
 
 

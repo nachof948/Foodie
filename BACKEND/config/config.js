@@ -4,11 +4,11 @@ const ClienteGoogle = require('../models/Usuario-Google')
 require('dotenv').config()
 
 
-passport.serializeUser((usuario, done)=>{
-    done(null, usuario)
+passport.serializeUser((user, done)=>{
+    done(null, user)
 })
-passport.deserializeUser((usuario, done)=>{
-    done(null, usuario)
+passport.deserializeUser((user, done)=>{
+    done(null, user)
 })
 
 
